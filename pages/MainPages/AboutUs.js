@@ -1,155 +1,35 @@
 import React from "react";
-import { Fade } from "react-reveal";
-import Pulse from 'react-reveal/Pulse';
+import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  textAlign: "center",
+  boxShadow: "none",
+  color: theme.palette.text.secondary,
+  borderRadius: "20px",
+  background: "transparent",
+}));
 
 const About = () => {
   return (
     <>
-      <Pulse>
-        <h1>About</h1>
-        <h2> Lorem ipsum </h2>
-        <p>
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-        </p>
-        <h2> Lorem ipsum </h2>
-        <p>
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-        </p>
-      </Pulse>
-      <Pulse>
-        <h2> Lorem ipsum </h2>
-        <p>
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-        </p>
-
-        <h2> Lorem ipsum </h2>
-        <p>
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-        </p>
-      </Pulse>
-      <Fade bottom>
-        <h2> Lorem ipsum </h2>
-        <p>
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-        </p>
-
-        <h2> Lorem ipsum </h2>
-        <p>
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-          Encourage all teams from marketing to engineering to share
-          announcements, strengthen company culture, and get instant feedback.
-        </p>
-      </Fade>
+      <Grid
+        container
+        justifyContent="center"
+        rowSpacing={1}
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        sx={{ paddingTop: "30px" }}
+      >
+        <Grid item xs={10}>
+          <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>About Us</Item>
+          <Item sx={{ fontSize: "15px" }}>
+            If you have any question, you can contact Us lorem aslfjsalkdfhskldf
+            lksfjslkf sldfh sdajfhsa flkasf hsdkjf
+          </Item>
+        </Grid>
+      </Grid>
     </>
   );
 };

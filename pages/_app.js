@@ -5,12 +5,19 @@ import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import Slide from "react-reveal/Slide"; // Importing Slide from react-reveal
 import Zoom from "react-reveal/Zoom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
 
 function MyApp({ Component, pageProps }) {
+  const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    // color: theme.palette.text.secondary,
+  }));
+
   const [background, setBackground] = useState(
     "https://www.ngs-it.com/files/course/Backgrounds_in_CSS.jpg"
   );

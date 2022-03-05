@@ -3,7 +3,6 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -40,15 +39,13 @@ const ContactUs = () => {
             <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>
               GET IN TOUCH
             </Item>
-            <Item sx={{ fontSize: "15px"}}>
+            <Item sx={{ fontSize: "15px" }}>
               If you have any question, you can contact Us lorem
               aslfjsalkdfhskldf lksfjslkf sldfh sdajfhsa flkasf hsdkjf
             </Item>
           </Grid>
         </Grid>
       </Box>
-
-      {/* <img src="" alt="Contact" /> */}
     </>
   );
 };

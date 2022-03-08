@@ -1,7 +1,7 @@
 import React from "react";
 
-function loginForm(props) {
-  return <div></div>;
+function loginForm() {
+  return <div style={{ textAlign: "center" }}> here Create you form</div>;
 }
 
 export default loginForm;

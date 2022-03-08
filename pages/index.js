@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
+import LoginForm from "./components/loginForm";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -12,7 +12,7 @@ const firebaseConfig = {
   storageBucket: "belize-cattle-tracker.appspot.com",
   messagingSenderId: "1000473041553",
   appId: "1:1000473041553:web:6abf6c70b8f0583a43bd30",
-  measurementId: "G-N39WEHKHKQ"
+  measurementId: "G-N39WEHKHKQ",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -36,11 +36,12 @@ export default function Home() {
       sx={{ paddingTop: "30px" }}
     >
       <Grid item xs={10}>
-        <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>Home Page</Item>
-        <Item sx={{ fontSize: "15px" }}>This is the body</Item>
+        <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>
+          This is for Form
+        </Item>
+        <LoginForm />
       </Grid>
-      {console.log(app)}
+      {/* {console.log(app)} */}
     </Grid>
-    
   );
 }

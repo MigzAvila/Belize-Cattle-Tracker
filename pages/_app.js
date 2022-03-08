@@ -8,7 +8,6 @@ import Paper from "@mui/material/Paper";
 import Zoom from "react-reveal/Zoom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
 
 function MyApp({ Component, pageProps }) {
   const Item = styled(Paper)(({ theme }) => ({

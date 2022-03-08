@@ -19,9 +19,17 @@ const link = [
   { href: "/MainPages/ContactUs", Name: "Contact Us" },
 ];
 
+
+const Admin = [{ href: "/Admin/AdminHome", Name: "Admin" }];
+
 const navBar = ({ setIsBackgroundChanged }) => {
   const [isBurgerNav, setIsBurgerNav] = useState(false); //to display hamburger menu icon
   const [isShowNav, setIsShowNav] = useState(false); //to display nav bar when less than 600px
+
+  const [currentNavBar, setCurrentNavBar] = useState([]);
+
+  //to change nav bar for customer or admin based on role ID
+  const [roleID, setRoleId] = useState(1);
 
   //breakpoints
   const mediaQuery = useMediaQuery(useTheme().breakpoints.down("sm"));
@@ -34,9 +42,9 @@ const navBar = ({ setIsBackgroundChanged }) => {
       setIsShowNav(false);
   }, [mediaQuery]);
 
-  //checks is it's day time
-  const hours = new Date().getHours();
-  const isDayTime = hours >= 6 && hours < 17;
+  useEffect(() => {
+    roleID === 1 ? setCurrentNavBar(link) : setCurrentNavBar(Admin);
+  }, [roleID]);
 
   //odd index vertical nav transition
   const oddIndex = useSpring({
@@ -125,7 +133,7 @@ const navBar = ({ setIsBackgroundChanged }) => {
         {/* Nav bar for md to lg screen size */}
         {!mediaQuery && (
           <>
-            {link.map((item, index) => (
+            {currentNavBar.map((item, index) => (
               <Links
                 linkName={item.Name}
                 linkRef={item.href}
@@ -138,7 +146,7 @@ const navBar = ({ setIsBackgroundChanged }) => {
 
         {/*  Display when screen size gets less than 600px  */}
         {isShowNav &&
-          link.map((item, index) => (
+          currentNavBar.map((item, index) => (
             <animated.div
               key={index}
               style={index % 2 === 0 ? evenIndex : oddIndex}

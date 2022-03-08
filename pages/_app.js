@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   }));
 
   const [background, setBackground] = useState(
-    "https://www.ngs-it.com/files/course/Backgrounds_in_CSS.jpg"
+    "https://c1.wallpaperflare.com/preview/440/781/267/agriculture-blur-close-up-countryside.jpg"
   );
   const [isBackgroundChanged, setIsBackgroundChanged] = useState(true);
   const [pageHeading, setPageHeading] = useState("ADVENTURE IS WORTHWHILE");
@@ -60,8 +60,8 @@ function MyApp({ Component, pageProps }) {
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              paddingBottom: "12rem",
-              marginBottom: "2rem",
+              paddingBottom: "2rem",
+              marginBottom: "1rem",
               backgroundImage: `url(${background}) `,
             }}
           >
@@ -77,10 +77,13 @@ function MyApp({ Component, pageProps }) {
                 <span>
                   <div>
                     <img
-                      src="https://www.pinclipart.com/picdir/big/143-1433909_belize-livestock-registry-belize-livestock-producers-association-clipart.png"
-                      alt="heading icon"
-                      width="100px"
-                      height="100px"
+                      src="../images/logo (2).png"
+                      style={{
+                        alt: "Logo",
+                        width: "100px",
+                        height: "100px",
+                        borderRadius: "50%",
+                      }}
                     />
                   </div>
                   <span style={{ fontSize: "45px" }}>

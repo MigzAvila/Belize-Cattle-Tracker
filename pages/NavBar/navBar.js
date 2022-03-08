@@ -19,7 +19,6 @@ const link = [
   { href: "/MainPages/ContactUs", Name: "Contact Us" },
 ];
 
-
 const Admin = [{ href: "/Admin/AdminHome", Name: "Admin" }];
 
 const navBar = ({ setIsBackgroundChanged }) => {
@@ -42,6 +41,7 @@ const navBar = ({ setIsBackgroundChanged }) => {
       setIsShowNav(false);
   }, [mediaQuery]);
 
+  //here the firebase will change ID based on login
   useEffect(() => {
     roleID === 1 ? setCurrentNavBar(link) : setCurrentNavBar(Admin);
   }, [roleID]);

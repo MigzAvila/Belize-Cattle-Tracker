@@ -32,17 +32,22 @@ const loginForm =(props)=> {
       setUsername((prevState) => event.target.value);
     }
   };
+  const updateLoginStatus = (name, auth) => {
+    apiService.login(name, auth);}
 
   const handleLoginCredentials = (event) => {
     event.preventDefault();
-    console.log("AKI", Username, Password , "AKI");
-    console.log(userAuth[Username]);
 
     //checks if username name matches with password
-    const status = userAuth[Username] === Password ? true : false;
+    // users.find(user => user.name === name);
+      console.log(userAuth.find((user) => user.name === Username))
+      let actual_password = userAuth.find((user) => user.name === Username);
+
+    const status = actual_password["password"] === Password ? true :false;
 
     if (status) {
       props.authorize();
+      updateLoginStatus(Username, status);
     }
   };
 

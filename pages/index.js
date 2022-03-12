@@ -38,7 +38,6 @@ export default function Home() {
       <Grid item xs={10}>
         <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>
         </Item>
-        <LoginForm />
       </Grid>
     </Grid>
   );

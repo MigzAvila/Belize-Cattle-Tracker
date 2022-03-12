@@ -8,6 +8,7 @@ import Paper from "@mui/material/Paper";
 import Zoom from "react-reveal/Zoom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import LoginForm from "./components/LoginForm/index";
 
 function MyApp({ Component, pageProps }) {
   const Item = styled(Paper)(({ theme }) => ({
@@ -16,6 +17,9 @@ function MyApp({ Component, pageProps }) {
     textAlign: "center",
     // color: theme.palette.text.secondary,
   }));
+
+  const [isAuth, setIsAuth] = useState(false);
+
 
   const [background, setBackground] = useState(
     "https://c1.wallpaperflare.com/preview/440/781/267/agriculture-blur-close-up-countryside.jpg"
@@ -40,16 +44,11 @@ function MyApp({ Component, pageProps }) {
     color: "white",
   }));
 
-  //large nav bar transition
-  const largeNav = useSpring({
-    to: isBackgroundChanged ? { opacity: 1 } : { opacity: 0 },
-    from: isBackgroundChanged ? { opacity: 0 } : { opacity: 1 },
-  });
+
 
   return (
     <>
-      {isBackgroundChanged && (
-        <animated.div style={largeNav}>
+    {isAuth ? ( <animated.div>
           <Box
             sx={{
               width: "auto",
@@ -95,8 +94,7 @@ function MyApp({ Component, pageProps }) {
             </HeadingItem>
           </Box>
           <Component {...pageProps} />
-        </animated.div>
-      )}
+        </animated.div> ): <LoginForm />}
     </>
   );
 }

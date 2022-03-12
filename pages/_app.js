@@ -18,7 +18,19 @@ function MyApp({ Component, pageProps }) {
     // color: theme.palette.text.secondary,
   }));
 
-  const [isAuth, setIsAuth] = useState(false);
+  // const [isAuth, setIsAuth] = useState(false);
+  //Check if open is in localStorage and set it to state else set it to false
+  const [isAuth, setIsAuth] = useState(() => {
+    const localData = localStorage.getItem("isAuth");
+    return localData ? JSON.parse(localData) : false;
+  });
+
+
+
+  //using localstorage to saver user credentials lese  set  to empty string
+  useEffect(() => {
+    localStorage.setItem("isAuth", JSON.stringify(isAuth));
+  }, [isAuth]);
 
 
   const [background, setBackground] = useState(

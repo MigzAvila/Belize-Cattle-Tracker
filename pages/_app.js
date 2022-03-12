@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
     "https://c1.wallpaperflare.com/preview/440/781/267/agriculture-blur-close-up-countryside.jpg"
   );
   const [isBackgroundChanged, setIsBackgroundChanged] = useState(true);
-  const [pageHeading, setPageHeading] = useState("ADVENTURE IS WORTHWHILE");
 
   //breakpoints
   const mediaQuery = useMediaQuery(useTheme().breakpoints.down("785"));
@@ -68,7 +67,6 @@ function MyApp({ Component, pageProps }) {
               setBackground={setBackground}
               background={background}
               setIsBackgroundChanged={setIsBackgroundChanged}
-              setPageHeading={setPageHeading}
             />
 
             <HeadingItem>

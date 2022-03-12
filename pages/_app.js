@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
     // color: theme.palette.text.secondary,
   }));
 
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
 
   const [background, setBackground] = useState(

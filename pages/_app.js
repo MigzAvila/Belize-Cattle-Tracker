@@ -24,7 +24,10 @@ function MyApp({ Component, pageProps }) {
   const [background, setBackground] = useState(
     "https://c1.wallpaperflare.com/preview/440/781/267/agriculture-blur-close-up-countryside.jpg"
   );
-  const [isBackgroundChanged, setIsBackgroundChanged] = useState(true);
+
+  const authorize = () => {
+    setIsAuth(true);
+  };
 
   //breakpoints
   const mediaQuery = useMediaQuery(useTheme().breakpoints.down("785"));
@@ -62,11 +65,7 @@ function MyApp({ Component, pageProps }) {
               backgroundImage: `url(${background}) `,
             }}
           >
-            <NavBar
-              setBackground={setBackground}
-              background={background}
-              setIsBackgroundChanged={setIsBackgroundChanged}
-            />
+            <NavBar />
 
             <HeadingItem>
               <Zoom bottom cascade>
@@ -94,7 +93,7 @@ function MyApp({ Component, pageProps }) {
             </HeadingItem>
           </Box>
           <Component {...pageProps} />
-        </animated.div> ): <LoginForm />}
+        </animated.div> ): <LoginForm isAuth={isAuth} authorize={authorize}/>}
     </>
   );
 }

@@ -2,9 +2,52 @@ import React, {useState, useEffect} from "react";
 import Link from "next/link";
 import { Button, Grid, TextField, Typography} from '@material-ui/core'
 import loginClass from "../../../styles/Login.module.css"
+import { APIService } from "../APIcalls/apiCalls";
 
 
-const loginForm =()=> {
+const loginForm =(props)=> {
+
+  const apiService = new APIService();
+  const [userAuth, setUserAuth] = useState([]);
+    const [Username, setUsername] = useState(""); //login username
+  const [Password, setPassword] = useState(""); //login password
+
+  useEffect(() => {
+    try {
+      apiService.getUsers().then((res) => {
+        console.log(res);
+        setUserAuth(res);
+      });
+    } catch (e) {
+      console.log(e);
+      setUserAuth([]);
+    }
+  }, [props.isAuth]);
+
+  const handleChange = (prop) => (event) => {
+    if (prop === "password") {
+      setPassword((prevState) => (prevState = event.target.value));
+
+    } else if (prop === "username") {
+      setUsername((prevState) => event.target.value);
+    }
+  };
+
+  const handleLoginCredentials = (event) => {
+    event.preventDefault();
+    console.log("AKI", Username, Password , "AKI");
+    console.log(userAuth[Username]);
+
+    //checks if username name matches with password
+    const status = userAuth[Username] === Password ? true : false;
+
+    if (status) {
+      props.authorize();
+    }
+  };
+
+
+
 	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
 	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
 	  				  borderRadius: "10px",}
@@ -19,9 +62,9 @@ const loginForm =()=> {
 					<img src="images/logo (2).png" width={"100px"} length={"100px"} style={imageStyle}></img>
 					<h2>Log In</h2>
 				</Grid>
-				<TextField label='Role ID' placeholder='Enter Role ID' fullWidth required/>
-				<TextField label='Password' placeholder='Enter Password' type='password' fullWidth required/>
-				<Button type='submit' color='primary' variant='contained' style={btnStyle} fullWidth>Log in</Button>
+				<TextField label='Role ID' placeholder='Enter Role ID' onChange={handleChange("username")} fullWidth required />
+				<TextField label='Password' placeholder='Enter Password' type='password' onChange={handleChange("password")} fullWidth required/>
+				<Button  color='primary' variant='contained' style={btnStyle} fullWidth  onClick={handleLoginCredentials}>Log in</Button>
 				<Typography align="right"> 
 					
 						<span className= {loginClass.span} >

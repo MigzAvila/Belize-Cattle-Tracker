@@ -1,8 +1,11 @@
 import { initializeApp } from "firebase/app";
 import{getFirestore} from "@firebase/firestore";
+import { APIService } from "../pages/components/APIcalls/apiCalls";
+
+const apiService = new APIService();
 
 const firebaseConfig = {
-    apiKey: "AIdomvfgij",
+    apiKey: apiService.getFirebaseKey(),
     authDomain: "belize-cattle-tracker-eee6b.firebaseapp.com",
     projectId: "belize-cattle-tracker-eee6b",
     storageBucket: "belize-cattle-tracker-eee6b.appspot.com",

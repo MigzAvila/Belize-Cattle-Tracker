@@ -6,16 +6,18 @@ import { APIService } from "../APIcalls/apiCalls";
 
 
 const loginForm =(props)=> {
-
+  
   const apiService = new APIService();
   const [userAuth, setUserAuth] = useState([]);
   const [Username, setUsername] = useState(""); //login username
   const [Password, setPassword] = useState(""); //login password
 
+   console.log(apiService.getFirebaseKey(), "HERE122");
+
   useEffect(() => {
     try {
       apiService.getUsers().then((res) => {
-        console.log(process.env.REACT_APP_API_KEY, "HERE122");
+       
         setUserAuth(res);
       });
     } catch (e) {
@@ -83,8 +85,6 @@ const loginForm =(props)=> {
 		  	</div>
 	  	</Grid>
   )
-
-
 }
 
 export default loginForm;

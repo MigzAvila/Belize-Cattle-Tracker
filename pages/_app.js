@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
     // color: theme.palette.text.secondary,
   }));
 
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
 
   const [background, setBackground] = useState(
@@ -47,8 +47,6 @@ function MyApp({ Component, pageProps }) {
     color: "white",
   }));
 
-
-
   return (
     <>
     {isAuth ? ( <animated.div>
@@ -66,7 +64,7 @@ function MyApp({ Component, pageProps }) {
             }}
           >
             <NavBar />
-
+            
             <HeadingItem>
               <Zoom bottom cascade>
                 <span>

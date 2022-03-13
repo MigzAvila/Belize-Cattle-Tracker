@@ -1,4 +1,9 @@
 export class APIService {
+
+   getFirebaseKey() {
+    const response = process.env.NEXT_PUBLIC_APP_KEY;
+    return response;
+  }
   getUsers() {
     return fetch("/api/users")
       .then((res) => res.json())
@@ -10,18 +15,12 @@ export class APIService {
  // updating user
   async login(name, auth) {
     let state = false;
-    console.log(name, "iddd");
-
     let user = await fetch(`/api/users/${name}`)
       .then((res) => res.json())
       .then((data) => {
         return data;
       });
-    console.log(user, "currentQues");
-
     user.isAuth = auth;
-    console.log(user, "currentQues");
-
     try {
       await fetch(`/api/users/${name}`, {
         method: "PUT",

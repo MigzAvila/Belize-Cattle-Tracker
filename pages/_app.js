@@ -66,6 +66,9 @@ function MyApp({ Component, pageProps }) {
             }}
           >
             <NavBar />
+            
+        {console.log(process.env.REACT_APP_API_KEY, "HERE")
+}
 
             <HeadingItem>
               <Zoom bottom cascade>

@@ -9,13 +9,13 @@ const loginForm =(props)=> {
 
   const apiService = new APIService();
   const [userAuth, setUserAuth] = useState([]);
-    const [Username, setUsername] = useState(""); //login username
+  const [Username, setUsername] = useState(""); //login username
   const [Password, setPassword] = useState(""); //login password
 
   useEffect(() => {
     try {
       apiService.getUsers().then((res) => {
-        console.log(res);
+        console.log(process.env.REACT_APP_API_KEY, "HERE122");
         setUserAuth(res);
       });
     } catch (e) {
@@ -37,13 +37,12 @@ const loginForm =(props)=> {
 
   const handleLoginCredentials = (event) => {
     event.preventDefault();
-
     //checks if username name matches with password
-    // users.find(user => user.name === name);
-      console.log(userAuth.find((user) => user.name === Username))
-      let actual_password = userAuth.find((user) => user.name === Username);
-
-    const status = actual_password["password"] === Password ? true :false;
+    let actual_password = userAuth.find((user) => user.name === Username);
+    const status = false;
+    if (actual_password) {
+      status = actual_password["password"] === Password ? true :false;
+    }     
 
     if (status) {
       props.authorize();
@@ -63,6 +62,8 @@ const loginForm =(props)=> {
   	return(
 		<Grid>
 			<div elevation={10} style={paperStyle}>
+            <h1>{process.env.REACT_APP_TITLE}</h1>
+    <h3>{process.env.REACT_APP_DESCRIPTION}</h3>
 				<Grid align = 'center'>
 					<img src="images/logo (2).png" width={"100px"} length={"100px"} style={imageStyle}></img>
 					<h2>Log In</h2>

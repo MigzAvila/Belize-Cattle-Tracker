@@ -9,8 +9,22 @@ import Zoom from "react-reveal/Zoom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import LoginForm from "./components/LoginForm/index";
+import {db} from './firebase-config';
+import {collection, getDocs} from "firebase/firestore";
 
 function MyApp({ Component, pageProps }) {
+  const [user_info, setUsers] = useState([]);
+  const userCollectionRef = collection(db, "user_info")
+
+  useEffect(() => {
+    const getUserInfo = async () => {
+      const userinfo = await getDocs(userCollectionRef);
+      setUsers(userinfo.docs.map((doc) => ({...doc.data(), id: doc.id})));
+      console.log(userinfo);
+    };
+    getUserInfo();
+  }, []);
+
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -18,7 +32,7 @@ function MyApp({ Component, pageProps }) {
     // color: theme.palette.text.secondary,
   }));
 
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
 
   const [background, setBackground] = useState(

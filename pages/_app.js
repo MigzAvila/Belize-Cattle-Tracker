@@ -61,8 +61,6 @@ function MyApp({ Component, pageProps }) {
     color: "white",
   }));
 
-
-
   return (
     <>
     {isAuth ? ( <animated.div>
@@ -80,7 +78,7 @@ function MyApp({ Component, pageProps }) {
             }}
           >
             <NavBar />
-
+            
             <HeadingItem>
               <Zoom bottom cascade>
                 <span>

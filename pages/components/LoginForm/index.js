@@ -11,8 +11,6 @@ const loginForm =(props)=> {
   const [Username, setUsername] = useState(""); //login username
   const [Password, setPassword] = useState(""); //login password
 
-   console.log(apiService.getFirebaseKey(), "HERE122");
-
   useEffect(() => {
     try {
       apiService.getUsers().then((res) => {

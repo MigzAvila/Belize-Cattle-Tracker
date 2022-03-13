@@ -44,7 +44,6 @@ export class APIService {
       console.log(err);
       state = false;
     }
-    console.log(state, "is true or false");
     return state;
   }
 

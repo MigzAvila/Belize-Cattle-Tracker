@@ -48,9 +48,9 @@ const ContactUs = () => {
             rowspacing="1"
             columnspacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            <Grid item xs={6}>
+            <Grid sx={{backgroundColor:"gray", paddingBottom:"1.5rem", borderRadius:"0"}} item xs={8}>
               <Item>
-                <ul className={contactUsClass.formUl}>
+                <ul className={contactUsClass.formUl} >
                   <li id="formFirstName" className={contactUsClass.formUlLi}>
                     <div className={contactUsClass.formField}>
                       {/* <div class="label placeholder">First Name</div> */}
@@ -161,20 +161,7 @@ const ContactUs = () => {
                   </li>
                   {/* <!-- end of new fields added --> */}
                 </ul>
-                <div id="newsletter-subscribe">
-                  <input
-                    className={contactUsClass.inputCheckBox}
-                    aria-label="Newsletter Opt-In"
-                    name="NewsletterOptIn"
-                    type="checkbox"
-                    value="Y"
-                    aria-labelledby="newsletter-subscribe-label"
-                  />{" "}
-                  &nbsp;
-                  <span id="newsletter-subscribe-label">
-                    Subscribe to newsletter
-                  </span>
-                </div>{" "}
+               
                 <ul className={contactUsClass.submitBlock} role="presentation">
                   <li class={contactUsClass.submitBlockLi} role="presentation">
                     <button
@@ -190,8 +177,10 @@ const ContactUs = () => {
                 </ul>
               </Item>
             </Grid>
-            <Grid item xs={6}>
-              <Item>Hello2</Item>
+            <Grid className={contactUsClass.contactInfo} sx={{backgroundImage: "url(https://cdn1.vectorstock.com/i/1000x1000/79/30/smooth-and-blurry-dark-blue-gradient-mesh-vector-22867930.jpg)", borderRadius:"0", backgroundRepeat: "no repeat"}} item xs={4}>
+              <Item sx={{color:"white"}}>
+                <h1>CONTACT INFO</h1>
+              </Item>
             </Grid>
           </Grid>
         </form>

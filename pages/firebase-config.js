@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import{getFirestore} from "@firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBZ7cWnQT3mc2xaXf5sUxAJ552zUzYPl2Y",
+    apiKey: "AIdomvfgij",
     authDomain: "belize-cattle-tracker-eee6b.firebaseapp.com",
     projectId: "belize-cattle-tracker-eee6b",
     storageBucket: "belize-cattle-tracker-eee6b.appspot.com",

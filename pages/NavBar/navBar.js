@@ -17,6 +17,7 @@ const link = [
   { href: "/MainPages/AboutUs ", Name: "About Us" },
   { href: "/MainPages/ScanQR", Name: "ScanQR" },
   { href: "/MainPages/ContactUs", Name: "Contact Us" },
+  { href: "/MainPages/GenerateReport", Name:"Generate Report"}
 ];
 
 const Admin = [{ href: "/Admin/AdminHome", Name: "Admin" }];

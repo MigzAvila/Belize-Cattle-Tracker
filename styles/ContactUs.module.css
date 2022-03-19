@@ -1,0 +1,201 @@
+.body {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: rgb(124, 120, 120);
+  background-color: #fff;
+  display: grid;
+}
+.form {
+  width: 100%;
+  margin: 0px auto;
+}
+.formUl {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+  padding-left: 0;
+margin-left: 2.5rem; 
+margin-right: 2.5rem; 
+margin-top:2.5rem; 
+margin-bottom:2.5rem
+}
+.formUlLi {
+  list-style: none;
+  padding-bottom: 7.5px;
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.formField {
+  position: relative;
+}
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+  outline: none;
+  padding-top: 8px;
+  padding-right: 20px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  resize: none;
+  border-radius: 0;
+  border-color: #d9d9d9;
+  color: #000000;
+  background-color: #ffffff;
+  line-height: inherit;
+  font-family: inherit;
+}
+.submitBlock {
+  text-align: center;
+  margin: 0 -15px;
+  padding-top: 15px;
+}
+.submitBlockLi {
+  display: inline-block;
+  float: none;
+}
+@media (min-width: 768px) {
+  .submitBlockLi {
+    width: auto;
+  }
+}
+.submitBlockLiButton {
+  /* display: block; */
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  text-align: center;
+  background-image: url('https://cdn1.vectorstock.com/i/1000x1000/79/30/smooth-and-blurry-dark-blue-gradient-mesh-vector-22867930.jpg');
+  background-repeat: no-repeat;
+  /* background-color: #00203FFF; */
+  color: #ffffff;
+  transition: 0.15s ease-in-out;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.formLocations:before {
+  content: "\f107";
+  font-family: FontAwesome;
+  color: #00203FFF;
+  position: absolute;
+  right: 10px;
+  bottom: 1px;
+  line-height: 38px;
+  font-size: 18px;
+  pointer-events: none;
+  text-align: center;
+}
+.label {
+  text-align: left;
+  font-weight: normal;
+}
+.formRequired {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  height: 1px;
+  line-height: 1px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.formRequiredDropdown {
+  top: auto;
+  bottom: 1.25em;
+  right: 25px;
+  pointer-events: none;
+  right: calc(18px + 10px);
+}
+.formRequiredDropdown:after {
+  content: "*";
+}
+.formHeader {
+  width: 83.33333333%;
+  margin: 0px auto;
+  padding-bottom: 15px;
+}
+.formHeader div {
+  text-align: center;
+}
+.h1 {
+  font-family: "Helvetica Neue LT W01_77 Bd Cn", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  font-size: 36px !important;
+  margin: 0px;
+  padding: 0px;
+  color: #00203FFF;
+}
+.emailEnvelope:before {
+  content: "\f003";
+}
+
+@media (max-width: 490px) {
+  .h1 {
+    font-family: "Helvetica Neue LT W01_77 Bd Cn", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    font-size: 26px !important;
+    margin: 0px;
+    padding: 0px;
+    color: #00203FFF;
+  }
+  .contactInfo h1 {
+    font-size: 10px !important;
+  }
+  .submitBlockLiButton {
+    text-transform: uppercase;
+    font-family: "Oswald", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    padding-top: 8px;
+    padding-right: 30px;
+    padding-bottom: 8px;
+    padding-left: 30px;
+    text-align: center;
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+  .input,
+  .select,
+  .textarea {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 10px;
+    outline: none;
+    padding-top: 8px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    resize: none;
+    border-radius: 0;
+    border-color: #d9d9d9;
+    color: #000000;
+    background-color: #ffffff;
+    line-height: inherit;
+    font-family: inherit;
+  }
+  .formUl {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    margin-top: .5rem
+    /* marginLeft:"1.5rem", marginRight:"1.5rem", marginTop:"1.5rem", marginBottom:"1.5rem */
+  }
+}

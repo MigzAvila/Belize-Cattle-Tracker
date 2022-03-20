@@ -4,8 +4,6 @@ import { APIService } from "../pages/components/APIcalls/apiCalls";
 
 const apiService = new APIService();
 
-console.log(apiService.getFirebaseKey());
-console.log(apiService.getFirebaseKey());
 const firebaseConfig = {
     apiKey: apiService.getFirebaseKey(),
     authDomain: "belize-cattle-tracker-eee6b.firebaseapp.com",

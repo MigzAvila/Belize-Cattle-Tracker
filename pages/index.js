@@ -2,6 +2,20 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import LoginForm from "./components/loginForm";
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCkGn9g3w4nRvqFZjEUIAXLpfoWzmr6VTA",
+  authDomain: "belize-cattle-tracker.firebaseapp.com",
+  projectId: "belize-cattle-tracker",
+  storageBucket: "belize-cattle-tracker.appspot.com",
+  messagingSenderId: "1000473041553",
+  appId: "1:1000473041553:web:6abf6c70b8f0583a43bd30",
+  measurementId: "G-N39WEHKHKQ",
+};
+
+const app = initializeApp(firebaseConfig);
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -24,7 +38,9 @@ export default function Home() {
       <Grid item xs={10}>
         <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>
         </Item>
+        <LoginForm />
       </Grid>
+      {/* {console.log(app)} */}
     </Grid>
   );
 }

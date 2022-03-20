@@ -4,7 +4,7 @@ import { APIService } from "../pages/components/APIcalls/apiCalls";
 
 const apiService = new APIService();
 
-console.log(apiService.getFirebaseKey());
+console.log(apiService.getFirebaseKey(), "firebase key");
 console.log(apiService.getFirebaseKey());
 const firebaseConfig = {
     apiKey: apiService.getFirebaseKey(),

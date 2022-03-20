@@ -1,22 +1,24 @@
-import * as React from "react";
+import React from "react";
+import { useSpring, animated } from "react-spring";
 import { styled } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  textAlign: "center",
-  boxShadow: "none",
-  color: theme.palette.text.secondary,
-  borderRadius: "20px",
-  background: "transparent",
-}));
-
-const ContactUs = () => {
+const Home = () => {
+  const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    // color: theme.palette.text.secondary,
+  }));
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 1000,
+  });
   return (
     <>
-      {/* image contact form */}
       <Box
         sx={{
           width: "auto",
@@ -39,10 +41,7 @@ const ContactUs = () => {
             <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>
               GET IN TOUCH
             </Item>
-            <Item sx={{ fontSize: "15px" }}>
-              If you have any question, you can contact Us lorem
-              aslfjsalkdfhskldf lksfjslkf sldfh sdajfhsa flkasf hsdkjf
-            </Item>
+            <Item sx={{ fontSize: "15px" }}>This is admin side</Item>
           </Grid>
         </Grid>
       </Box>
@@ -50,4 +49,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Home;

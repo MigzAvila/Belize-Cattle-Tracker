@@ -4,6 +4,7 @@ export class APIService {
     const response = process.env.NEXT_PUBLIC_APP_KEY;
     return response;
   }
+  
   getUsers() {
     return fetch("/api/users")
       .then((res) => res.json())

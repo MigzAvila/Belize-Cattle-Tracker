@@ -3,7 +3,7 @@ import "../styles/generateReport.css"
 import NavBar from "./NavBar/navBar";
 import Box from "@mui/material/Box";
 import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
+import { animated } from "react-spring";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Zoom from "react-reveal/Zoom";
@@ -15,22 +15,25 @@ import {collection, getDocs} from "firebase/firestore";
 
 function MyApp({ Component, pageProps }) {
   const [user_info, setUsers] = useState([]);
+  const [isCustomer, setIsCustomer] = useState([]);
   const userCollectionRef = collection(db, "user_info")
 
   useEffect(() => {
     const getUserInfo = async () => {
       const userinfo = await getDocs(userCollectionRef);
       setUsers(userinfo.docs.map((doc) => ({...doc.data(), id: doc.id})));
-      console.log(userinfo);
     };
     getUserInfo();
   }, []);
+
+  useEffect(() => {
+    setIsCustomer(pageProps)
+  }, [pageProps]);
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: "center",
-    // color: theme.palette.text.secondary,
   }));
 
   const [isAuth, setIsAuth] = useState(false);
@@ -42,6 +45,11 @@ function MyApp({ Component, pageProps }) {
 
   const authorize = () => {
     setIsAuth(true);
+  };
+
+  const Customer = () => {
+    console.log("HERE", pageProps," JERE");
+    // return isCustomer.includes("MainPages");
   };
 
   //breakpoints
@@ -61,10 +69,9 @@ function MyApp({ Component, pageProps }) {
     fontSize: mediaQuery ? "25px" : "40px",
     color: "white",
   }));
-
   return (
     <>
-    {isAuth ? ( <animated.div>
+    {isAuth || Customer() ? ( <animated.div>
           <Box
             sx={{
               width: "auto",
@@ -105,6 +112,7 @@ function MyApp({ Component, pageProps }) {
               </Zoom>
             </HeadingItem>
           </Box>
+          {console.log("HEREL", ...pageProps)}
           <Component {...pageProps} />
         </animated.div> ): <LoginForm isAuth={isAuth} authorize={authorize}/>}
     </>

@@ -1012,14 +1012,14 @@
   dependencies:
     "tslib" "^1.7.0"
 
-"@progress/kendo-drawing@^1.2.0", "@progress/kendo-drawing@^1.5.12":
+"@progress/kendo-drawing@^1.2.0", "@progress/kendo-drawing@^1.5.12", "@progress/kendo-drawing@1.16.3":
   "integrity" "sha512-zUh0EjffezxJy4osPVeHflbosdlMk971hYj3zJ8mAHiswUei5UTIn7aAxfHDXu3Fpw2d9WyRi/LkI0xKWNmDRA=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-drawing/-/kendo-drawing-1.16.3.tgz"
   "version" "1.16.3"
   dependencies:
     "@progress/pako-esm" "^1.0.1"
 
-"@progress/kendo-licensing@^1.0.1":
+"@progress/kendo-licensing@^1.0.1", "@progress/kendo-licensing@^1.2.2":
   "integrity" "sha512-DUGwVHmaIFrGkKdO2NjajfNBrLc0Jo0o11WTmo9AkqWzMT+zAOu0D5aghnWGPkPg3e8+T5m9dEZvWPw4eJP4Sw=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-licensing/-/kendo-licensing-1.2.2.tgz"
   "version" "1.2.2"
@@ -1031,7 +1031,7 @@
   "resolved" "https://registry.npmjs.org/@progress/kendo-popup-common/-/kendo-popup-common-1.9.0.tgz"
   "version" "1.9.0"
 
-"@progress/kendo-react-animation@^5.0.0":
+"@progress/kendo-react-animation@^5.0.0", "@progress/kendo-react-animation@^5.1.0":
   "integrity" "sha512-68pDJINh5qdV30BYye6FArdPo84sIZ1G2BbBPZhBHvGCvFlfLNVrFvDphpp3phBfdOgucneFTtNGqqt9TPHmFg=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-animation/-/kendo-react-animation-5.1.0.tgz"
   "version" "5.1.0"
@@ -1040,7 +1040,7 @@
     "prop-types" "^15.6.0"
     "react-transition-group" "^4.4.2"
 
-"@progress/kendo-react-buttons@^5.0.0", "@progress/kendo-react-buttons@5.1.0":
+"@progress/kendo-react-buttons@^5.0.0", "@progress/kendo-react-buttons@^5.1.0", "@progress/kendo-react-buttons@5.1.0":
   "integrity" "sha512-zbOwGP0gBio7BqDnQsoGRrdQyiqPIg1j1MeUAlnCZJDWkyxclU8e0Zo2Z08By6a9Zc2XhhyOyyE/GFwFWCrwbw=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-buttons/-/kendo-react-buttons-5.1.0.tgz"
   "version" "5.1.0"
@@ -1057,7 +1057,7 @@
     "@progress/kendo-draggable-common" "dev"
     "prop-types" "^15.6.0"
 
-"@progress/kendo-react-data-tools@^5.0.0":
+"@progress/kendo-react-data-tools@^5.0.0", "@progress/kendo-react-data-tools@^5.1.0":
   "integrity" "sha512-qTi8xb01+W+cvoiWMcGuZQ47kUiLH+c79RRKcwo+/99NWethjsOogshcq5118uGnyvWzQmTApEYx/sd0ZhtrYQ=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-data-tools/-/kendo-react-data-tools-5.1.0.tgz"
   "version" "5.1.0"
@@ -1065,7 +1065,7 @@
     "@progress/kendo-react-common" "5.1.0"
     "prop-types" "^15.6.0"
 
-"@progress/kendo-react-dateinputs@^5.0.0":
+"@progress/kendo-react-dateinputs@^5.0.0", "@progress/kendo-react-dateinputs@^5.1.0":
   "integrity" "sha512-SD4Pz195sV571ziFeCNT54aCQoBTMTpiRqQ3HKmvjp349iMuwENIb9+cwbXKiw8+u4+xApn61i5D7Q1K8c2FQQ=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-dateinputs/-/kendo-react-dateinputs-5.1.0.tgz"
   "version" "5.1.0"
@@ -1077,7 +1077,7 @@
     "@progress/kendo-react-popup" "5.1.0"
     "prop-types" "^15.6.0"
 
-"@progress/kendo-react-dropdowns@^5.0.0":
+"@progress/kendo-react-dropdowns@^5.0.0", "@progress/kendo-react-dropdowns@^5.1.0":
   "integrity" "sha512-OnZZ5/uYTT8W4BrbC0RP3u/qwOPl2DNsa5eoFLDEavZRW2VpbGe15Tn6xz1I2vHdbX7Q5uIskRRuuuOE152J7A=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-dropdowns/-/kendo-react-dropdowns-5.1.0.tgz"
   "version" "5.1.0"
@@ -1095,7 +1095,7 @@
     "@progress/kendo-react-common" "5.1.0"
     "prop-types" "^15.6.0"
 
-"@progress/kendo-react-inputs@^5.0.0":
+"@progress/kendo-react-inputs@^5.0.0", "@progress/kendo-react-inputs@5.1.0":
   "integrity" "sha512-vyCZyc0vFxqJSf15hdzKfj3gsZRlb3qnKueUTiIRxoe3hcsXUCv+Zbn0ZYNLBadagMp58o//QZ6OK7YV9tk/7A=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-inputs/-/kendo-react-inputs-5.1.0.tgz"
   "version" "5.1.0"
@@ -1106,7 +1106,7 @@
     "@progress/kendo-react-popup" "5.1.0"
     "prop-types" "^15.6.0"
 
-"@progress/kendo-react-intl@^5.0.0":
+"@progress/kendo-react-intl@^5.0.0", "@progress/kendo-react-intl@^5.1.0":
   "integrity" "sha512-Wt13rBTm5YXllsRjsFyX16TwLDOA2GMYxjrd1c/xi8MC4ThYC1+QAS8JgQPfmLBXZaJPbHTDOXLtU3zUbcVm4g=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-intl/-/kendo-react-intl-5.1.0.tgz"
   "version" "5.1.0"
@@ -1131,7 +1131,7 @@
     "@progress/kendo-react-common" "5.1.0"
     "prop-types" "^15.6.0"
 
-"@progress/kendo-react-treeview@^5.0.0":
+"@progress/kendo-react-treeview@^5.0.0", "@progress/kendo-react-treeview@^5.1.0":
   "integrity" "sha512-2tmt4UBBGtt8BS2hIt177SQ86WyOJdhjFhC3dGtmrsNGZDiCALk7W2wtBMVTEGrUURMpVGIW8EVGQ+c9XhOWPg=="
   "resolved" "https://registry.npmjs.org/@progress/kendo-react-treeview/-/kendo-react-treeview-5.1.0.tgz"
   "version" "5.1.0"
@@ -2977,9 +2977,9 @@
     "brace-expansion" "^1.1.7"
 
 "minimist@^1.2.0", "minimist@^1.2.5":
-  "integrity" "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw=="
-  "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz"
-  "version" "1.2.5"
+  "integrity" "sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q=="
+  "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
+  "version" "1.2.6"
 
 "ms@^2.1.1", "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="

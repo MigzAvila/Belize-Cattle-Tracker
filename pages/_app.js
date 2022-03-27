@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
     textAlign: "center",
   }));
 
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
 
 
   const [background, setBackground] = useState(
@@ -112,7 +112,6 @@ function MyApp({ Component, pageProps }) {
               </Zoom>
             </HeadingItem>
           </Box>
-          {console.log("HEREL", ...pageProps)}
           <Component {...pageProps} />
         </animated.div> ): <LoginForm isAuth={isAuth} authorize={authorize}/>}
     </>

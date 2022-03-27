@@ -2,6 +2,7 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import MainPage from "./MainPages/index";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -14,17 +15,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Home() {
   return (
-    <Grid
-      container
-      justifyContent="center"
-      rowSpacing={1}
-      columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-      sx={{ paddingTop: "30px" }}
-    >
-      <Grid item xs={10}>
-        <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>
-        </Item>
-      </Grid>
-    </Grid>
+   <MainPage />
   );
 }

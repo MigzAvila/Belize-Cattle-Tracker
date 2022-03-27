@@ -1,5 +1,6 @@
 import "../styles/globals.css";
-import "../styles/generateReport.css"
+import "../styles/generateReport.css";
+import NavBar from "./NavBar/navBar";
 import Box from "@mui/material/Box";
 import React, { useState, useEffect } from "react";
 import { animated } from "react-spring";

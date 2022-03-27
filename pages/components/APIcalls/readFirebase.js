@@ -47,3 +47,4 @@ function writeNewPost(uid, username, picture, title, body) {
   
     return update(ref(db), updates);
   }
+  

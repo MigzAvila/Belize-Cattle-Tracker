@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import CustomerNav from "../components/CustomerNavBar/index";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -14,7 +13,7 @@ const Item = styled(Paper)(({ theme }) => ({
   background: "transparent",
 }));
 
-const ScanQR = () => {
+const Main = () => {
   return (
     <>
     <CustomerNav />
@@ -26,12 +25,14 @@ const ScanQR = () => {
         sx={{ paddingTop: "30px" }}
       >
         <Grid item xs={10}>
-          <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>Scan QR</Item>
-          <Item sx={{ fontSize: "15px" }}>Scanning page</Item>
+          <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>Main Page</Item>
+          <Item sx={{ fontSize: "15px" }}>
+            This is the main Page
+          </Item>
         </Grid>
       </Grid>
     </>
   );
 };
 
-export default ScanQR;
+export default Main;

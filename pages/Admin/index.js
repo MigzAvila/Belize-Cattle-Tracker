@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import LoginForm from "../components/LoginForm/index";
 
 const Home = () => {
+  
+  const [isAuth, setIsAuth] = useState(false);
+
+    const authorize = () => {
+    setIsAuth(true);
+  };
+
+
+
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -19,7 +29,7 @@ const Home = () => {
   });
   return (
     <>
-      <Box
+     {isAuth ? ( <Box
         sx={{
           width: "auto",
           height: "auto",
@@ -44,7 +54,7 @@ const Home = () => {
             <Item sx={{ fontSize: "15px" }}>This is admin side</Item>
           </Grid>
         </Grid>
-      </Box>
+      </Box>): <LoginForm isAuth={isAuth} authorize={authorize}/>}
     </>
   );
 };

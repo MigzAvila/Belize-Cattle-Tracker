@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import contactUsClass from "../../styles/ContactUs.module.css";
+import CustomerNav from "../components/CustomerNavBar/index";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -16,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const ContactUs = () => {
   return (
     <>
-      {/* image contact form */}
+      <CustomerNav />
       <div
         className={contactUsClass.body}
         style={{ borderColor: "black", width: "60%", margin: "0 auto" }}

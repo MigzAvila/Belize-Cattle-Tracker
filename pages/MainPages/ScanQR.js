@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
+import CustomerNav from "../components/CustomerNavBar/index";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -16,6 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const ScanQR = () => {
   return (
     <>
+    <CustomerNav />
       <Grid
         container
         justifyContent="center"

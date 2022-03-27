@@ -7,6 +7,7 @@ import Paper from "@mui/material/Paper";
 import { process } from '@progress/kendo-data-query';
 import { Grid, GridColumn as Column } from '@progress/kendo-react-grid';
 import { ColumnMenu, ColumnMenuCheckboxFilter } from './columnMenu.js';
+import CustomerNav from "../components/CustomerNavBar/index";
 
 import cattle_info from '../data_info/cattle_info';
 
@@ -38,6 +39,8 @@ class GenerateReport extends React.Component {
 
   render() {
     return(
+      <>
+      <CustomerNav />
       <Grid
         data={this.state.result}
         {...this.state.dataState}
@@ -56,6 +59,7 @@ class GenerateReport extends React.Component {
           <Column field="location" title="Location" ColumnMenu={ColumnMenuCheckboxFilter}/>
           <Column field="eartag_code" title="Ear Tag" ColumnMenu={ColumnMenu}/>
         </Grid>
+        </>
     )
   }
 };

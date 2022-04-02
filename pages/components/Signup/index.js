@@ -62,7 +62,7 @@ const loginForm =(props)=> {
 		<Grid>
 			<div elevation={10} style={paperStyle}>
 				<Grid align = 'center'>
-					<img src="images/logo (2).png" width={"100px"} length={"100px"} style={imageStyle}></img>
+					<img src="../../images/logo.png" width={"100px"} length={"100px"} style={imageStyle}></img>
 					<h2>Log In</h2>
 				</Grid>
 				<TextField label='Name' placeholder='Enter Name' onChange={handleChange("Name")} fullWidth required />
@@ -74,9 +74,9 @@ const loginForm =(props)=> {
 				<Typography align="right"> 
 					
 						<span className= {loginClass.span} >
-							<Link href='#'>
-								Sign In? 
-							</Link>
+            <Link item xs={2} href='/components/LoginForm'>
+              	Sign In? 
+            </Link>
 						</span>
 					
 				</Typography>

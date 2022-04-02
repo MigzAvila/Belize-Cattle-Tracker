@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
 import { Button, Grid, TextField, Typography} from '@material-ui/core'
-import loginClass from "../../../styles/Login.module.css"
-import { APIService } from "../APIcalls/apiCalls";
+import loginClass from "../../../styles/Login.module.css";
+
+const apiService = require("../APIcalls/APIService");
 
 const loginForm =(props)=> {
-  
-  const apiService = new APIService();
+
   const [userAuth, setUserAuth] = useState([]);
   const [Username, setUsername] = useState(""); //login username
   const [Password, setPassword] = useState(""); //login password

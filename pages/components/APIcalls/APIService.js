@@ -1,9 +1,9 @@
-export class APIService {
+const APIService = {
 
    getFirebaseKey() {
     const response = process.env.NEXT_PUBLIC_APP_KEY;
     return response;
-  }
+  },
   
   getUsers() {
     return fetch("/api/users")
@@ -11,7 +11,7 @@ export class APIService {
       .then((data) => {
         return data;
       });
-  }
+  },
 
  // updating user
   async login(name, auth) {
@@ -46,6 +46,12 @@ export class APIService {
       state = false;
     }
     return state;
+  },
+  add(a,b) {
+    return a+b;
   }
 
 }
+
+// Exporting the component
+module.exports = APIService;

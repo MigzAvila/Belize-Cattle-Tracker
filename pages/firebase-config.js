@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
 import{getFirestore} from "@firebase/firestore";
-import { APIService } from "../pages/components/APIcalls/apiCalls";
 
-const apiService = new APIService();
+const apiService = require("./components/APIcalls/APIService");
 
 const firebaseConfig = {
     apiKey: apiService.getFirebaseKey(),

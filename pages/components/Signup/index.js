@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
 import { Button, Grid, TextField, Typography} from '@material-ui/core'
-import loginClass from "../../../styles/Login.module.css";
+import loginClass from "../../../styles/Login.module.css"
 
 const apiService = require("../APIcalls/APIService");
-
 const loginForm =(props)=> {
+  
 
   const [userAuth, setUserAuth] = useState([]);
   const [Username, setUsername] = useState(""); //login username
@@ -65,14 +65,17 @@ const loginForm =(props)=> {
 					<img src="images/logo (2).png" width={"100px"} length={"100px"} style={imageStyle}></img>
 					<h2>Log In</h2>
 				</Grid>
-				<TextField label='Role ID' placeholder='Enter Role ID' onChange={handleChange("username")} fullWidth required />
-				<TextField label='Password' placeholder='Enter Password' type='password' onChange={handleChange("password")} fullWidth required/>
-				<Button  color='primary' variant='contained' style={btnStyle} fullWidth  onClick={handleLoginCredentials}>Log in</Button>
+				<TextField label='Name' placeholder='Enter Name' onChange={handleChange("Name")} fullWidth required />
+				<TextField label='Email' placeholder='Enter Email' type='Email' onChange={handleChange("Email")} fullWidth required/>
+				<TextField label='Password' placeholder='Password' type='password' fullWidth required />
+				<TextField label='ConfirmPassword' placeholder='Confirm Password' type='password' onChange={handleChange("ConfirmPassword")} fullWidth required/>
+				<TextField label='RoleID' placeholder='Role Code' type='text' onChange={handleChange("RoleID")} fullWidth required/>
+				<Button  color='primary' variant='contained' style={btnStyle} fullWidth  onClick={handleLoginCredentials}>Sign Up</Button>
 				<Typography align="right"> 
 					
 						<span className= {loginClass.span} >
 							<Link href='#'>
-								Sign Up? 
+								Sign In? 
 							</Link>
 						</span>
 					
@@ -81,4 +84,5 @@ const loginForm =(props)=> {
 	  	</Grid>
   )
 }
+
 export default loginForm;

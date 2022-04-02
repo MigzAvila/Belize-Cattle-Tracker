@@ -15,9 +15,9 @@ import Box from "@mui/material/Box";
 const link = [
   { href: "/", Name: "Home" },
   { href: "/MainPages/AboutUs ", Name: "About Us" },
-  { href: "/MainPages/ScanQR", Name: "ScanQR" },
   { href: "/MainPages/ContactUs", Name: "Contact Us" },
-  { href: "/MainPages/GenerateReport", Name:"Generate Report"}
+  { href: "/MainPages/GenerateReport", Name:"Generate Report"},
+  { href: "/MainPages/create_cattle_info", Name:"Cattle Info"}
 ];
 
 const Admin = [{ href: "/Admin/AdminHome", Name: "Admin" }];

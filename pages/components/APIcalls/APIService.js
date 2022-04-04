@@ -16,7 +16,18 @@ const APIService = {
 
   async addNewCattle (newCattleInfo){
             try {
-               if (newCattleInfo.newCattleID !== 0 && newCattleInfo.newCattleAntbio !== "" && newCattleInfo.newCattleBreed !== "" && newCattleInfo.newCattleGender !== "" && newCattleInfo.newCattleWeight !== "" && newCattleInfo.newCattleDna !== "" && newCattleInfo.newCattleTag !== "" && newCattleInfo.newCattleFarmer !== "" && newCattleInfo.newCattleLocation !== "" && newCattleInfo.newCattleHissue !== "" && newCattleInfo.newCattleReartype !== "" && newCattleInfo.newCattleReproStat !== "") {
+               if (newCattleInfo.newCattleID !== 0 && 
+                   newCattleInfo.newCattleAntbio !== "" &&
+                   newCattleInfo.newCattleBreed !== "" && 
+                   newCattleInfo.newCattleGender !== "" && 
+                   newCattleInfo.newCattleWeight !== "" && 
+                   newCattleInfo.newCattleDna !== "" && 
+                   newCattleInfo.newCattleTag !== "" && 
+                   newCattleInfo.newCattleFarmer !== "" && 
+                   newCattleInfo.newCattleLocation !== "" &&
+                   newCattleInfo.newCattleHissue !== "" &&
+                   newCattleInfo.newCattleReartype !== "" && 
+                   newCattleInfo.newCattleReproStat !== "") {
                }
                else {
                    throw new Error("Please fill in all the fields");

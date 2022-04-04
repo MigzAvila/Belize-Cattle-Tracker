@@ -1,13 +1,61 @@
 const APIService = require( "./APIService")
 
-describe('APIService', () => {
+let newCattleInfo = {}
+
+function initialize() {
+   newCattleInfo = {
+         newCattleID: 100,
+         newCattleAntbio: "test",
+         newCattleBreed: "",
+         newCattleGender: "",
+         newCattleWeight: "",
+         newCattleDna: "",
+         newCattleTag: "",
+         newCattleFarmer: "",
+         newCattleLocation: "",
+         newCattleHissue: "",
+         newCattleReartype: "",
+         newCattleReproStat: "",
+      }
+}
+
+function clear() {
+   newCattleInfo = {}
+}
+
+beforeEach(() => {
+   initialize()   
+})
+
+
+afterEach(() => {
+     clear()
+})
+
+
+describe('testing purpose', () => {
    test('adds two num', () => {
       expect(APIService.add(1,2)).toBe(3);
      
    });
+   
+  } );
 
-   test('Add cattle info successfully to the database', async () => { 
-   const newCattleInfo = {
+  describe('', () => {
+     
+   test('Add cattle info fails to the database', async () => { 
+   console.log(newCattleInfo)
+   const result = await APIService.addNewCattle(newCattleInfo);
+   expect(result).toBe(false);
+   
+});
+     
+  });
+  
+
+  describe('', () => {
+      test('Add cattle info successfully to the database', async () => { 
+     newCattleInfo = {
       newCattleID: 100,
       newCattleAntbio: "Bioetest",
       newCattleBreed: "Hereford",
@@ -25,28 +73,9 @@ describe('APIService', () => {
    expect(result).toBe(true);
 
    });
-
-   test('Add cattle info fails to the database', async () => { 
-      const newCattleInfo = {
-         newCattleID: 0,
-         newCattleAntbio: "",
-         newCattleBreed: "",
-         newCattleGender: "",
-         newCattleWeight: "",
-         newCattleDna: "",
-         newCattleTag: "",
-         newCattleFarmer: "",
-         newCattleLocation: "",
-         newCattleHissue: "",
-         newCattleReartype: "",
-         newCattleReproStat: "",
-      }
-   const result = await APIService.addNewCattle(newCattleInfo);
-   expect(result).toBe(false);
-   
-});
-   
-  } );
+     
+  });
+  
 
     
 

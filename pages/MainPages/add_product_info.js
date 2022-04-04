@@ -6,7 +6,7 @@ import {collection, getDocs, addDoc} from "firebase/firestore";
 
 function createInfo() {
 
-    const [newCattleInfo, setNewCattleInfo] = useState({
+    const [newProdInfo, setNewCattleInfo] = useState({
     newCattleID: 0,
     newCattleAntbio: "",
     newCattleBreed: "",
@@ -19,6 +19,8 @@ function createInfo() {
     newCattleHissue: "",
     newCattleReartype: "",
     newCattleReproStat: "",
+    newFctryDest: "",
+    newFc
 
   });
 
@@ -79,9 +81,7 @@ function createInfo() {
                             <th>Tag</th>
                             <th>Farmer</th>
                             <th>Location</th>
-                            <th>Health Issue</th> 
-                            <th>Rearing Type</th> 
-                            <th>Reproduction Status</th>                            
+                            <th>Health Issue</th>                            
                         </tr>
                     </thead>
                     <tbody>
@@ -96,8 +96,6 @@ function createInfo() {
                             <td>{cattle.farmer}</td>
                             <td>{cattle.location}</td>
                             <td>{cattle.und_hlth_issues}</td>
-                            <td>{cattle.rearing_type}</td>
-                            <td>{cattle.repro_stat}</td>
                         </tr>
                     </tbody>
                     </table>

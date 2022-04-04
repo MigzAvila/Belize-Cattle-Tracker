@@ -27,7 +27,12 @@ const APIService = {
                    newCattleInfo.newCattleLocation !== "" &&
                    newCattleInfo.newCattleHissue !== "" &&
                    newCattleInfo.newCattleReartype !== "" && 
-                   newCattleInfo.newCattleReproStat !== "") {
+                   newCattleInfo.newCattleReproStat !== "" &&
+                   newCattleInfo.newFctryDest !== "" &&
+                   newCattleInfo.newFctryName !== "" &&
+                   newCattleInfo.newSlgthrDate !== "" &&
+                   newCattleInfo.newSlgthrMtd !== "" &&
+                   newCattleInfo.newTraceNum !== "") {
                }
                else {
                    throw new Error("Please fill in all the fields");

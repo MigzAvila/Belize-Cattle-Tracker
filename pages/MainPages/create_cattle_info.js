@@ -79,7 +79,9 @@ function createInfo() {
                             <th>Tag</th>
                             <th>Farmer</th>
                             <th>Location</th>
-                            <th>Health Issue</th>                            
+                            <th>Health Issue</th> 
+                            <th>Rearing Type</th> 
+                            <th>Reproduction Status</th>                            
                         </tr>
                     </thead>
                     <tbody>
@@ -94,6 +96,8 @@ function createInfo() {
                             <td>{cattle.farmer}</td>
                             <td>{cattle.location}</td>
                             <td>{cattle.und_hlth_issues}</td>
+                            <td>{cattle.rearing_type}</td>
+                            <td>{cattle.repro_stat}</td>
                         </tr>
                     </tbody>
                     </table>

@@ -51,14 +51,18 @@ afterEach(() => {
 
 
 describe('testing purpose', () => {
+   test('Test to see if we have a value for the firebase key', () => {
+      expect(APIService.getFirebaseKey).toBeTruthy();
+   
+   });
+
    test('adds two num', () => {
       expect(APIService.add(1,2)).toBe(3);
      
    });
 
       
-   test('Add cattle info fails to the database', async () => { 
-   newCattleInfo = getValidteInfo()
+   test('Add cattle info fails to the database with invalid data', async () => { 
    const result = await APIService.addNewCattle(newCattleInfo);
    expect(result).toBe(false);
    

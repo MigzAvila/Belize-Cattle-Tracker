@@ -51,6 +51,11 @@ afterEach(() => {
 
 
 describe('testing purpose', () => {
+   test('Test to see if we have a value for the firebase key', () => {
+      expect(APIService.getFirebaseKey).toBeTruthy();
+   
+   });
+
    test('adds two num', () => {
       expect(APIService.add(1,2)).toBe(3);
      

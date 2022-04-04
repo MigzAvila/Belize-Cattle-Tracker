@@ -57,8 +57,7 @@ describe('testing purpose', () => {
    });
 
       
-   test('Add cattle info fails to the database', async () => { 
-   newCattleInfo = getValidteInfo()
+   test('Add cattle info fails to the database with invalid data', async () => { 
    const result = await APIService.addNewCattle(newCattleInfo);
    expect(result).toBe(false);
    

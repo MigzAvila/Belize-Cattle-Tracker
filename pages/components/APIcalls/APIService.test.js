@@ -109,11 +109,11 @@ describe('Test api calls', () => {
         newCattleID : 100023 , 
         newFctryDest : "RTer" ,
         newFctryName : "RESs dfs" ,
-        newSlgthrDate : "tTDff " ,
+        newSlghtrDate : "tTDff " ,
         newSlgthrMtd : "sdf sd" ,
         newTraceNum : "sfdf",
       }
-   const result = await APIService.addNewSlgthr(newCattleInfo);
+   const result = await APIService.addNewSlaughter(newCattleInfo);
    expect(result).toBe(true);
    });
 
@@ -123,11 +123,11 @@ describe('Test api calls', () => {
       newCattleID : 0 , 
       newFctryDest : "" ,
       newFctryName : "" ,
-      newSlgthrDate : "tTDff " ,
+      newSlghtrDate : "tTDff " ,
       newSlgthrMtd : "sdf sd" ,
       newTraceNum : "sfdf",
    }
-   const result = await APIService.addNewSlgthr(newCattleInfo);
+   const result = await APIService.addNewSlaughter(newCattleInfo);
    expect(result).toBe(false);
    
    });

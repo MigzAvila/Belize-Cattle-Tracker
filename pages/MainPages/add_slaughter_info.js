@@ -68,7 +68,7 @@ function createSlgthrInfo() {
                             <td>{slgthr.cattle_id}</td>
                             <td>{slgthr.fctry_dest}</td>
                             <td>{slgthr.fctry_name}</td>
-                            <td>{slgthr.slghtr_date}</td>
+                            <td>{slgthr.slgthr_date}</td>
                             <td>{slgthr.slgthr_mtd}</td>
                             <td>{slgthr.trace_num}</td>
 

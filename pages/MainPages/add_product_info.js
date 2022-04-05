@@ -67,7 +67,7 @@ function createInfo() {
         <input placeholder="Trade Details..." onChange={(e) => setNewProductInfo({...newProductInfo, newTradeDets: e.target.value})} value={newProductInfo.newTradeDets}/>
 
         <button onClick={createProduct}> Add Product</button>
-        {productInfo.map((cattle, index) =>{
+        {productInfo.map((product, index) =>{
             return(
                     <table striped bordered hover size="sm" key= {index}>
                     <thead>
@@ -90,20 +90,20 @@ function createInfo() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{cattle.cattle_id}</td>
-                            <td>{cattle.btch_num}</td>
-                            <td>{cattle.cost_pu}</td>
-                            <td>{cattle.expr_date}</td>
-                            <td>{cattle.fctry_dest}</td>
-                            <td>{cattle.fctry_name}</td>
-                            <td>{cattle.meat_prodtype}</td>
-                            <td>{cattle.pkg_date}</td>
-                            <td>{cattle.prod_descr}</td>
-                            <td>{cattle.prod_weight}</td>
-                            <td>{cattle.store_loc}</td>
-                            <td>{cattle.store_name}</td>
-                            <td>{cattle.trace_num}</td>
-                            <td>{cattle.trace_dets}</td>
+                            <td>{product.cattle_id}</td>
+                            <td>{product.btch_num}</td>
+                            <td>{product.cost_pu}</td>
+                            <td>{product.expr_date}</td>
+                            <td>{product.fctry_dest}</td>
+                            <td>{product.fctry_name}</td>
+                            <td>{product.meat_prodtype}</td>
+                            <td>{product.pkg_date}</td>
+                            <td>{product.prod_descr}</td>
+                            <td>{product.prod_weight}</td>
+                            <td>{product.store_loc}</td>
+                            <td>{product.store_name}</td>
+                            <td>{product.trace_num}</td>
+                            <td>{product.trace_dets}</td>
                         </tr>
                     </tbody>
                     </table>

@@ -44,6 +44,38 @@ const APIService = {
         return true;
   },
 
+  async addNewProduct (newProductInfo){
+    try {
+      if (newProductInfo.newCattleID !== 0 && 
+          newProductInfo.newBatchNum !== "" &&
+          newProductInfo.newCostPu !== "" &&
+          newProductInfo.newExpiryDate !== "" &&
+          newProductInfo.newFactoryDes !== "" &&
+          newProductInfo.newFactoryName !== "" &&
+          newProductInfo.newMeatProdType !== "" &&
+          newProductInfo.newPckgDate !== "" &&
+          newProductInfo.newProdDesc !== "" &&
+          newProductInfo.newProdWeight !== "" &&
+          newProductInfo.newStoreLoc !== "" &&
+          newProductInfo.newStoreName !== "" &&
+          newProductInfo.newTraceNum !== "" &&
+          newProductInfo.newTradeDets !== "") {
+      }
+      else {
+          throw new Error("Please fill in all the fields");
+      }
+   }
+   catch (err) {
+       console.log(err);
+       return false; 
+   }
+return true;
+  },
+
+
+
+
+/*
     async addNewProduct (newCattleInfo){
             try {
                if (newCattleInfo.newCattleID !== 0 && 
@@ -73,7 +105,7 @@ const APIService = {
                 return false; 
             }
         return true;
-  },
+  },*/
 
  // updating user
   async login(name, auth) {

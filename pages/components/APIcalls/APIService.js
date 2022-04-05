@@ -26,12 +26,7 @@ const APIService = {
                    newCattleInfo.newCattleLocation !== "" &&
                    newCattleInfo.newCattleHissue !== "" &&
                    newCattleInfo.newCattleReartype !== "" && 
-                   newCattleInfo.newCattleReproStat !== "" &&
-                   newCattleInfo.newFctryDest !== "" &&
-                   newCattleInfo.newFctryName !== "" &&
-                   newCattleInfo.newSlgthrDate !== "" &&
-                   newCattleInfo.newSlgthrMtd !== "" &&
-                   newCattleInfo.newTraceNum !== "") {
+                   newCattleInfo.newCattleReproStat !== "" ) {
                }
                else {
                    throw new Error("Please fill in all the fields");
@@ -72,40 +67,27 @@ const APIService = {
 return true;
   },
 
+  //new slaughter info 
+  async addNewSlgthr (newSlgthrInfo){
+    try {
+      if (newSlgthrInfo.newCattleID !== 0 && 
+        newSlgthrInfo.newFctryDest !== "" &&
+        newSlgthrInfo.newFctryName !== "" &&
+        newSlgthrInfo.newSlgthrDate !== "" &&
+        newSlgthrInfo.newSlgthrMtd !== "" &&
+        newSlgthrInfo.newTraceNum !== "") {
+        }
+        else {
+            throw new Error("Please fill in all the fields");
+        }
+     }
+     catch (err) {
+         console.log(err);
+         return false; 
+     }
+  return true;
+    },
 
-
-
-/*
-    async addNewProduct (newCattleInfo){
-            try {
-               if (newCattleInfo.newCattleID !== 0 && 
-                   newCattleInfo.newCattleAntbio !== "" &&
-                   newCattleInfo.newCattleBreed !== "" && 
-                   newCattleInfo.newCattleGender !== "" && 
-                   newCattleInfo.newCattleWeight !== "" && 
-                   newCattleInfo.newCattleDna !== "" && 
-                   newCattleInfo.newCattleTag !== "" && 
-                   newCattleInfo.newCattleFarmer !== "" && 
-                   newCattleInfo.newCattleLocation !== "" &&
-                   newCattleInfo.newCattleHissue !== "" &&
-                   newCattleInfo.newCattleReartype !== "" && 
-                   newCattleInfo.newCattleReproStat !== "" &&
-                   newCattleInfo.newFctryDest !== "" &&
-                   newCattleInfo.newFctryName !== "" &&
-                   newCattleInfo.newSlgthrDate !== "" &&
-                   newCattleInfo.newSlgthrMtd !== "" &&
-                   newCattleInfo.newTraceNum !== "") {
-               }
-               else {
-                   throw new Error("Please fill in all the fields");
-               }
-            }
-            catch (err) {
-                console.log(err);
-                return false; 
-            }
-        return true;
-  },*/
 
  // updating user
   async login(name, auth) {

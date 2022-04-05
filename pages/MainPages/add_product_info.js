@@ -28,7 +28,7 @@ function createInfo() {
     const productInfoCollection = collection(db, "prodpack_info");
 
     const createProduct = async () => {
-        let status = await apiService.addNewCattle(newProductInfo);
+        let status = await apiService.addNewProduct(newProductInfo);
         console.log(status);
         if (status) {
           await addDoc(productInfoCollection, {cattle_id: newProductInfo.newCattleID, btch_num: newProductInfo.newBatchNum, cost_pu: newProductInfo.newCostPu,

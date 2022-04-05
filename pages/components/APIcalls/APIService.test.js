@@ -50,15 +50,10 @@ afterEach(() => {
 })
 
 
-describe('testing purpose', () => {
+describe('Test api calls', () => {
    test('Test to see if we have a value for the firebase key', () => {
       expect(APIService.getFirebaseKey).toBeTruthy();
    
-   });
-
-   test('adds two num', () => {
-      expect(APIService.add(1,2)).toBe(3);
-     
    });
 
       
@@ -74,6 +69,22 @@ describe('testing purpose', () => {
    newCattleInfo = getValidteInfo()
 
    const result = await APIService.addNewCattle(newCattleInfo);
+   expect(result).toBe(true);
+
+   });
+
+      test('Add product info fails to the database with invalid data', async () => { 
+   const result = await APIService.addNewProduct(newCattleInfo);
+   expect(result).toBe(false);
+   
+   
+  } );
+
+   test('Add product info successfully to the database', async () => { 
+   
+   newCattleInfo = getValidteInfo()
+
+   const result = await APIService.addNewProduct(newCattleInfo);
    expect(result).toBe(true);
 
    });

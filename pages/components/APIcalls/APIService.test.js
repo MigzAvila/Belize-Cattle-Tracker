@@ -61,34 +61,76 @@ describe('Test api calls', () => {
    const result = await APIService.addNewCattle(newCattleInfo);
    expect(result).toBe(false);
    
-   
   } );
 
    test('Add cattle info successfully to the database', async () => { 
-   
    newCattleInfo = getValidteInfo()
-
    const result = await APIService.addNewCattle(newCattleInfo);
    expect(result).toBe(true);
 
    });
 
-      test('Add product info fails to the database with invalid data', async () => { 
-   const result = await APIService.addNewProduct(newCattleInfo);
-   expect(result).toBe(false);
-   
-   
-  } );
-
    test('Add product info successfully to the database', async () => { 
    
-   newCattleInfo = getValidteInfo()
+      newCattleInfo = {
+          newCattleID: 10, 
+          newBatchNum: 13,
+          newCostPu :  "1023",
+          newExpiryDate :  "10/23/4",
+          newFactoryDes :  "tests",
+          newFactoryName :  "Testfactory",
+          newMeatProdType :  "Testfactory",
+          newPckgDate :  "Testfactory",
+          newProdDesc :  "Testfactory",
+          newProdWeight :  "Testfactory",
+          newStoreLoc :  "Testfactory",
+          newStoreName :  "Testfactory",
+          newTraceNum :  "Testfactory",
+          newTradeDets :  "Testfactory",
+      }
+      
 
    const result = await APIService.addNewProduct(newCattleInfo);
    expect(result).toBe(true);
 
    });
 
+   test('Add product info fails to the database with invalid data', async () => { 
+
+   const result = await APIService.addNewProduct(newCattleInfo);
+   expect(result).toBe(false);
+
+   });
+
+
+
+   test('Add Slaughter info successfully to the database', async () => { 
+      newCattleInfo = {
+        newCattleID : 100023 , 
+        newFctryDest : "RTer" ,
+        newFctryName : "RESs dfs" ,
+        newSlgthrDate : "tTDff " ,
+        newSlgthrMtd : "sdf sd" ,
+        newTraceNum : "sfdf",
+      }
+   const result = await APIService.addNewSlgthr(newCattleInfo);
+   expect(result).toBe(true);
+   });
+
+
+   test('Add Slaughter info fails to post to the database with invalid data', async () => { 
+      newCattleInfo = {
+      newCattleID : 0 , 
+      newFctryDest : "" ,
+      newFctryName : "" ,
+      newSlgthrDate : "tTDff " ,
+      newSlgthrMtd : "sdf sd" ,
+      newTraceNum : "sfdf",
+   }
+   const result = await APIService.addNewSlgthr(newCattleInfo);
+   expect(result).toBe(false);
+   
+   });
+
   });
   
-

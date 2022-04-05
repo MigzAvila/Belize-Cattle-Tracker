@@ -73,7 +73,7 @@ return true;
       if (newSlgthrInfo.newCattleID !== 0 && 
         newSlgthrInfo.newFctryDest !== "" &&
         newSlgthrInfo.newFctryName !== "" &&
-        newSlgthrInfo.newSlgthrDate !== "" &&
+        newSlgthrInfo.newSlghtrDate !== "" &&
         newSlgthrInfo.newSlgthrMtd !== "" &&
         newSlgthrInfo.newTraceNum !== "") {
         }

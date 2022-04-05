@@ -24,7 +24,7 @@ function createSlgthrInfo() {
         let status = await apiService.addNewSlaughter(newSlgthrInfo);
         console.log(status);
         if (status) {
-          await addDoc(slgthrInfoCollection, {cattle_id: newSlghtrInfo.newCattleID, fctry_dest: newCattleInfo.newFctryDest, fctry_name: newCattleInfo.newFctryName, slgthr_date: newCattleInfo.newSlghtrDate, slgthr_mtd: newCattleInfo.newSlgthrMtd, trace_num: newCattleInfo.newTraceNum})
+          await addDoc(slgthrInfoCollection, {cattle_id: newSlgthrInfo.newCattleID, fctry_dest: newSlgthrInfo.newFctryDest, fctry_name: newSlgthrInfo.newFctryName, slgthr_date: newSlgthrInfo.newSlghtrDate, slgthr_mtd: newSlgthrInfo.newSlgthrMtd, trace_num: newSlgthrInfo.newTraceNum})
         }
     };
     
@@ -44,8 +44,8 @@ function createSlgthrInfo() {
         <input type="number" placeholder="Cattle id..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newCattleID: e.target.value})} value={newSlgthrInfo.newCattleID} />
         <input placeholder="Factory Destination..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newFctryDest: e.target.value})} value={newSlgthrInfo.newFctryDest}/>
         <input placeholder="Factory Name..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newFctryName: e.target.value})} value={newSlgthrInfo.newFctryName}/>
-        <input placeholder="Slaughter Date..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newSlgthrDate: e.target.value})} value={newSlgthrInfo.newSlgthrDate}/>
-        <input placeholder="Slaughter Method..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newSlgthrMethod: e.target.value})} value={newSlgthrInfo.newSlgthrMethod}/>
+        <input placeholder="Slaughter Date..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newSlghtrDate: e.target.value})} value={newSlgthrInfo.newSlghtrDate}/>
+        <input placeholder="Slaughter Method..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newSlgthrMtd: e.target.value})} value={newSlgthrInfo.newSlgthrMtd}/>
         <input placeholder="Taceability Number..." onChange={(e) => setNewSlgthrInfo({...newSlgthrInfo, newTraceNum: e.target.value})} value={newSlgthrInfo.newTraceNum}/>
 
         <button onClick={createSlghtr}> Add Slaughter Info</button>

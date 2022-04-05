@@ -68,7 +68,7 @@ return true;
   },
 
   //new slaughter info 
-  async addNewSlgthr (newSlgthrInfo){
+  async addNewSlaughter (newSlgthrInfo){
     try {
       if (newSlgthrInfo.newCattleID !== 0 && 
         newSlgthrInfo.newFctryDest !== "" &&

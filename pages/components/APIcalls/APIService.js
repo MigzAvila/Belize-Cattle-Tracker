@@ -44,6 +44,37 @@ const APIService = {
         return true;
   },
 
+    async addNewProduct (newCattleInfo){
+            try {
+               if (newCattleInfo.newCattleID !== 0 && 
+                   newCattleInfo.newCattleAntbio !== "" &&
+                   newCattleInfo.newCattleBreed !== "" && 
+                   newCattleInfo.newCattleGender !== "" && 
+                   newCattleInfo.newCattleWeight !== "" && 
+                   newCattleInfo.newCattleDna !== "" && 
+                   newCattleInfo.newCattleTag !== "" && 
+                   newCattleInfo.newCattleFarmer !== "" && 
+                   newCattleInfo.newCattleLocation !== "" &&
+                   newCattleInfo.newCattleHissue !== "" &&
+                   newCattleInfo.newCattleReartype !== "" && 
+                   newCattleInfo.newCattleReproStat !== "" &&
+                   newCattleInfo.newFctryDest !== "" &&
+                   newCattleInfo.newFctryName !== "" &&
+                   newCattleInfo.newSlgthrDate !== "" &&
+                   newCattleInfo.newSlgthrMtd !== "" &&
+                   newCattleInfo.newTraceNum !== "") {
+               }
+               else {
+                   throw new Error("Please fill in all the fields");
+               }
+            }
+            catch (err) {
+                console.log(err);
+                return false; 
+            }
+        return true;
+  },
+
  // updating user
   async login(name, auth) {
     let state = false;
@@ -78,9 +109,6 @@ const APIService = {
     }
     return state;
   },
-  add(a,b) {
-    return a+b;
-  }
 
 }
 

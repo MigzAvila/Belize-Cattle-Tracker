@@ -51,7 +51,7 @@ function createInfo() {
 
     return (
     <div className="createInfo">
-        <input type="number" placeholder="Cattle id..." onChange={(e) => setNewProductInfo({...newProductInfo, newCattleID: e.target.value})} value={newProductInfo.newCattleID} />
+        <input type="number" placeholder="Cattle id..." onChange={(e) => setNewProductInfo({...newProductInfo, newCattleID: e.target.value})} value={newProductInfo.newCattleID}/>
         <input placeholder="Batch Number..." onChange={(e) => setNewProductInfo({...newProductInfo, newBatchNum: e.target.value})} value={newProductInfo.newBatchNum}/>
         <input placeholder="Cost Per Unit..." onChange={(e) => setNewProductInfo({...newProductInfo, newCostPu: e.target.value})} value={newProductInfo.newCostPu}/>
         <input placeholder="Expiry Date..." onChange={(e) => setNewProductInfo({...newProductInfo, newExpiryDate: e.target.value})} value={newProductInfo.newExpiryDate} />

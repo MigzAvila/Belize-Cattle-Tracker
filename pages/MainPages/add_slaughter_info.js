@@ -6,7 +6,7 @@ import {collection, getDocs, addDoc} from "firebase/firestore";
 
 function createSlgthrInfo() {
 
-    const [newSlghtrInfo, setNewSlgthrInfo] = useState({
+    const [newSlgthrInfo, setNewSlgthrInfo] = useState({
     newCattleID: 0,
     newFctryDest: "",
     newFctryName: "",
@@ -21,7 +21,7 @@ function createSlgthrInfo() {
     const slgthrInfoCollection = collection(db, "slaughter_info");
 
     const createSlghtr = async () => {
-        let status = await apiService.addNewSlaughter(newSlghtrInfo);
+        let status = await apiService.addNewSlaughter(newSlgthrInfo);
         console.log(status);
         if (status) {
           await addDoc(slgthrInfoCollection, {cattle_id: newSlghtrInfo.newCattleID, fctry_dest: newCattleInfo.newFctryDest, fctry_name: newCattleInfo.newFctryName, slgthr_date: newCattleInfo.newSlghtrDate, slgthr_mtd: newCattleInfo.newSlgthrMtd, trace_num: newCattleInfo.newTraceNum})

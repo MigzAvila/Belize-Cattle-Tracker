@@ -15,9 +15,6 @@
 
 <!-- A spacer -->
 <p>&nbsp;</p>
-
-<p align="center"><img src="website/static/img/jest-readme-headline.png" width="80%"/></p>
-
 <h2 align="center">🃏 Delightful JavaScript Testing</h2>
 
 **👩🏻‍💻 Developer Ready**: A comprehensive JavaScript testing solution. Works out of the box for most JavaScript projects.
@@ -114,7 +111,7 @@ You can run Jest directly from the CLI (if it's globally available in your `PATH
 Here's how to run Jest on files matching `my-test`, using `config.json` as a configuration file and display a native OS notification after the run:
 
 ```bash
-jest my-test --notify --config=config.json
+yarn test or npm test
 ```
 
 If you'd like to learn more about running `jest` through the command line, take a look at the [Jest CLI Options](https://jestjs.io/docs/cli) page.
@@ -129,107 +126,5 @@ Based on your project, Jest will ask you a few questions and will create a basic
 jest --init
 ```
 
-### Using Babel
-
-To use [Babel](https://babeljs.io/), install required dependencies via `yarn`:
-
-```bash
-yarn add --dev babel-jest @babel/core @babel/preset-env
-```
-
-Configure Babel to target your current version of Node by creating a `babel.config.js` file in the root of your project:
-
-```javascript
-// babel.config.js
-module.exports = {
-  presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
-};
-```
-
-_The ideal configuration for Babel will depend on your project._ See [Babel's docs](https://babeljs.io/docs/en/) for more details.
-
-<details><summary markdown="span"><strong>Making your Babel config jest-aware</strong></summary>
-
-Jest will set `process.env.NODE_ENV` to `'test'` if it's not set to something else. You can use that in your configuration to conditionally setup only the compilation needed for Jest, e.g.
-
-```javascript
-// babel.config.js
-module.exports = api => {
-  const isTest = api.env('test');
-  // You can use isTest to determine what presets and plugins to use.
-
-  return {
-    // ...
-  };
-};
-```
-
-> Note: `babel-jest` is automatically installed when installing Jest and will automatically transform files if a babel configuration exists in your project. To avoid this behavior, you can explicitly reset the `transform` configuration option:
-
-```javascript
-// jest.config.js
-module.exports = {
-  transform: {},
-};
-```
-
-</details>
-
-<!-- Note that the Babel 6 section in the Getting Started was removed -->
-
-### Using webpack
-
-Jest can be used in projects that use [webpack](https://webpack.js.org/) to manage assets, styles, and compilation. webpack does offer some unique challenges over other tools. Refer to the [webpack guide](https://jestjs.io/docs/webpack) to get started.
-
-### Using parcel
-
-Jest can be used in projects that use [parcel-bundler](https://parceljs.org/) to manage assets, styles, and compilation similar to webpack. Parcel requires zero configuration. Refer to the official [docs](https://parceljs.org/docs/) to get started.
-
-### Using TypeScript
-
-Jest supports TypeScript, via Babel. First, make sure you followed the instructions on [using Babel](#using-babel) above. Next, install the `@babel/preset-typescript` via `yarn`:
-
-```bash
-yarn add --dev @babel/preset-typescript
-```
-
-Then add `@babel/preset-typescript` to the list of presets in your `babel.config.js`.
-
-```diff
-// babel.config.js
-module.exports = {
-  presets: [
-    ['@babel/preset-env', {targets: {node: 'current'}}],
-+    '@babel/preset-typescript',
-  ],
-};
-```
-
-However, there are some [caveats](https://babeljs.io/docs/en/babel-plugin-transform-typescript#caveats) to using TypeScript with Babel. Because TypeScript support in Babel is purely transpilation, Jest will not type-check your tests as they are run. If you want that, you can use [ts-jest](https://github.com/kulshekhar/ts-jest) instead, or just run the TypeScript compiler [tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html) separately (or as part of your build process).
-
-<!-- end copied -->
-
-## Documentation
-
-Learn more about using [Jest on the official site!](https://jestjs.io)
-
-- [Getting Started](https://jestjs.io/docs/getting-started)
-- [Guides](https://jestjs.io/docs/snapshot-testing)
-- [API Reference](https://jestjs.io/docs/api)
-- [Configuring Jest](https://jestjs.io/docs/configuration)
-
-## Badge
-
-Show the world you're using _Jest_ `→` [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest) [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
-
-<!-- prettier-ignore -->
-```md
-[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
-```
-
-<a href="https://opencollective.com/jest/sponsor/0/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/0/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/1/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/1/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/2/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/2/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/3/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/3/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/4/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/4/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/5/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/5/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/6/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/6/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/7/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/7/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/8/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/8/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/9/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/9/avatar.svg"></a>
-
-## License
 
 Jest is [MIT licensed](./LICENSE).

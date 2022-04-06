@@ -51,7 +51,8 @@ yarn test or npm test
 
 This is to Run the unit Test:
 ```bash
-yarn test -t 'Name of the test' or npm test -t 'Name of the test' EX: npm test -- -t 'TC-1 Add cattle info to the database fails with invalid data'
+yarn test -t 'Name of the test' or npm test -t 'Name of the test' 
+EX: npm test -- -t 'TC-1 Add cattle info to the database fails with invalid data'
 ```
 If you'd like to learn more about running `jest` through the command line, take a look at the [Jest CLI Options](https://jestjs.io/docs/cli) page.
 

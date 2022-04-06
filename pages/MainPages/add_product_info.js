@@ -29,7 +29,6 @@ function createInfo() {
 
     const createProduct = async () => {
         let status = await apiService.addNewProduct(newProductInfo);
-        console.log(status);
         if (status) {
           await addDoc(productInfoCollection, {cattle_id: newProductInfo.newCattleID, btch_num: newProductInfo.newBatchNum, cost_pu: newProductInfo.newCostPu,
         expr_date: newProductInfo.newExpiryDate, fctry_dest: newProductInfo.newFactoryDes, fctry_name: newProductInfo.newFactoryName, meat_prodtype: newProductInfo.newMeatProdType,
@@ -67,6 +66,8 @@ function createInfo() {
         <input placeholder="Trade Details..." onChange={(e) => setNewProductInfo({...newProductInfo, newTradeDets: e.target.value})} value={newProductInfo.newTradeDets}/>
 
         <button onClick={createProduct}> Add Product</button>
+
+
         {productInfo.map((product, index) =>{
             return(
                     <table striped bordered hover size="sm" key= {index}>

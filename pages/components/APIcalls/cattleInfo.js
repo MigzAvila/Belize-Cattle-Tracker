@@ -4,7 +4,7 @@ const data = {
 getData () {
     return cattleInfo = [
     newCattleInfo = {
-      'newCattleID': 100,
+      'newCattleID': 35,
       'newCattleAntbio': "Bioetest",
       'newCattleBreed': "Hereford",
       'newCattleGender': "Male",
@@ -34,7 +34,7 @@ getData () {
           'newTradeDets' :  "Testfactory",
       },
     SlaughterInfo={
-      'newCattleID' : 100, 
+      'newCattleID' : 35, 
       'newFctryDest' : "Spanish Lookout" ,
       'newFctryName' : "Running W" ,
       'newSlghtrDate' : "Jan 30, 2022" ,

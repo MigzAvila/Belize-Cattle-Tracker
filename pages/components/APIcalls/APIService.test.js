@@ -6,7 +6,7 @@ let newCattleInfo = {}
 //create a valid info object for cattle
 function getValidteInfo() {
    return newCattleInfo = {
-      newCattleID: 100,
+      newCattleID: 35,
       newCattleAntbio: "Bioetest",
       newCattleBreed: "Hereford",
       newCattleGender: "Male",
@@ -57,16 +57,16 @@ afterEach(() => {
 
 
 //Test Suites for API Service files 
-describe('Test api calls', () => {
+describe('Test API Services Functions that Validate data before doing Api calls', () => {
 
    //Test case to check that there is a value for firebase
    test('Test to see if we have a value for the firebase key', () => {
-      expect(APIService.getFirebaseKey).toBeTruthy();
+      expect(APIService.getFirebaseKey).not.toBe(undefined);
    
    });
 
    //Test case to check cattle info successfully to the database with valid data
-   test('Add cattle info successfully to the database with valid data ', async () => { 
+   test('TC-1 Add cattle info successfully to the database with valid data ', async () => { 
    newCattleInfo = getValidteInfo()
    const result = await APIService.addNewCattle(newCattleInfo);
    expect(result).toBe(true);
@@ -74,17 +74,17 @@ describe('Test api calls', () => {
    });
 
    //Test case to check cattle info fails to the database with invalid data
-   test('Add cattle info to the database fails with invalid data', async () => { 
+   test('TC-1 Add cattle info to the database fails with invalid data', async () => { 
    const result = await APIService.addNewCattle(newCattleInfo);
-   expect(result).toBe(false);
+   expect(result).toBe(true);
    
   } );
 
    //Test case to check  product info successfully to the database with valid data
-   test('Add product info to the successfully database with valid data', async () => { 
+   test('TC-5 Add product info to the successfully database with valid data', async () => { 
    
       newCattleInfo = {
-          newCattleID: 10, 
+          newCattleID: 35, 
           newBatchNum: 13,
           newCostPu :  "1023",
           newExpiryDate :  "10/23/4",
@@ -107,7 +107,7 @@ describe('Test api calls', () => {
    });
 
    //Test case to check  product info successfully to the database with invalid data
-   test('Add product info fails to the database with invalid data', async () => { 
+   test('TC-5 Add product info fails to the database with invalid data', async () => { 
 
    const result = await APIService.addNewProduct(newCattleInfo);
    expect(result).toBe(false);
@@ -116,9 +116,9 @@ describe('Test api calls', () => {
 
 
    //Test case to check Slaughter info successfully to the database with valid data
-   test('Add Slaughter info successfully to the database with valid data', async () => { 
+   test('TC-8 Add Slaughter info successfully to the database with valid data', async () => { 
       newCattleInfo = {
-        newCattleID : 100023 , 
+        newCattleID : 35 , 
         newFctryDest : "Cayo District" ,
         newFctryName : "Running W" ,
         newSlghtrDate : "Jan 1, 2020" ,
@@ -130,9 +130,9 @@ describe('Test api calls', () => {
    });
 
    //Test case to check Slaughter info successfully to the database with invalid data
-   test('Add Slaughter info fails to post to the database with invalid data', async () => { 
+   test('TC-8 Add Slaughter info fails to post to the database with invalid data', async () => { 
       newCattleInfo = {
-      newCattleID : 0, 
+      newCattleID : 35, 
       newFctryDest : "" ,
       newFctryName : "" ,
       newSlghtrDate : "Jan 1, 2020" ,
@@ -144,14 +144,15 @@ describe('Test api calls', () => {
    
    });
 
-   test("Test generate report Filtering works with valid id", () => {
-      let result = APIService.filterInfo(data.getData(), 100);
-      console.log(result);
+   test("TC-7 Test generate report Filtering works with valid id", () => {
+      let result = APIService.filterInfo(data.getData(), 35);
+      console.log(data.getData(), result);
+      expect(data.getData()).not.toBe(result)
        expect(result.length).toBe(2);
    })
 
    
-   test("Test generate report Filtering works with invalid Id", () => {
+   test("TC-7 Test generate report Filtering works with invalid Id", () => {
       let result = APIService.filterInfo(data.getData(), 1234);
       console.log(result);
        expect(result.length).toBe(0)

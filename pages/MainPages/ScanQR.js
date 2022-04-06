@@ -3,6 +3,8 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
+import ReactDOM from 'react-dom';
+import App from '../App';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -28,7 +30,19 @@ const ScanQR = () => {
           <Item sx={{ fontSize: "15px" }}>Scanning page</Item>
         </Grid>
       </Grid>
+
+      {/* ReactDOM.render( */}
+  <React.StrictMode>
+    <App text = 
+    "My Name is Desire Amagwula \n I like to go to school"
+    />
+  </React.StrictMode>,
+  {/* document.getElementById('root') */}
+{/* ); */}
+
+
     </>
+    
   );
 };
 

@@ -1,0 +1,14 @@
+{
+  "name": "belize-cattle-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "jest": {
+    "verbose": true
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}

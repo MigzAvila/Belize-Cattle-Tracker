@@ -15,9 +15,9 @@ function getValidteInfo() {
       newCattleTag: "2020-Retro",
       newCattleFarmer: "UB",
       newCattleLocation: "Cayo District",
-      newCattleHissue: "asd",
-      newCattleReartype: "asdasd",
-      newCattleReproStat: "asdsa",
+      newCattleHissue: "none",
+      newCattleReartype: "Hereford",
+      newCattleReproStat: "none",
    }
 }
 
@@ -88,16 +88,16 @@ describe('Test api calls', () => {
           newBatchNum: 13,
           newCostPu :  "1023",
           newExpiryDate :  "10/23/4",
-          newFactoryDes :  "tests",
-          newFactoryName :  "Testfactory",
-          newMeatProdType :  "Testfactory",
-          newPckgDate :  "Testfactory",
-          newProdDesc :  "Testfactory",
-          newProdWeight :  "Testfactory",
-          newStoreLoc :  "Testfactory",
-          newStoreName :  "Testfactory",
-          newTraceNum :  "Testfactory",
-          newTradeDets :  "Testfactory",
+          newFactoryDes :  "Cayo District",
+          newFactoryName :  "Running W",
+          newMeatProdType :  "ribs",
+          newPckgDate :  "March 30, 2022",
+          newProdDesc :  "Spanish Lookout",
+          newProdWeight :  "10 lbs",
+          newStoreLoc :  "Lucky's",
+          newStoreName :  "Running W",
+          newTraceNum :  "10",
+          newTradeDets :  "Farmer Meat",
       }
       
 
@@ -119,11 +119,11 @@ describe('Test api calls', () => {
    test('Add Slaughter info successfully to the database with valid data', async () => { 
       newCattleInfo = {
         newCattleID : 100023 , 
-        newFctryDest : "RTer" ,
-        newFctryName : "RESs dfs" ,
-        newSlghtrDate : "tTDff " ,
-        newSlgthrMtd : "sdf sd" ,
-        newTraceNum : "sfdf",
+        newFctryDest : "Cayo District" ,
+        newFctryName : "Running W" ,
+        newSlghtrDate : "Jan 1, 2020" ,
+        newSlgthrMtd : "Stunning" ,
+        newTraceNum : "100023",
       }
    const result = await APIService.addNewSlaughter(newCattleInfo);
    expect(result).toBe(true);
@@ -132,12 +132,12 @@ describe('Test api calls', () => {
    //Test case to check Slaughter info successfully to the database with invalid data
    test('Add Slaughter info fails to post to the database with invalid data', async () => { 
       newCattleInfo = {
-      newCattleID : 0 , 
+      newCattleID : 0, 
       newFctryDest : "" ,
       newFctryName : "" ,
-      newSlghtrDate : "tTDff " ,
-      newSlgthrMtd : "sdf sd" ,
-      newTraceNum : "sfdf",
+      newSlghtrDate : "Jan 1, 2020" ,
+      newSlgthrMtd : "Stunning" ,
+      newTraceNum : "100023",
    }
    const result = await APIService.addNewSlaughter(newCattleInfo);
    expect(result).toBe(false);

@@ -154,7 +154,7 @@ describe('Test api calls', () => {
    test("Test generate report Filtering works with invalid Id", () => {
       let result = APIService.filterInfo(data.getData(), 1234);
       console.log(result);
-       expect(result.length).not.toBe(0)
+       expect(result.length).toBe(0)
    })
 
   });

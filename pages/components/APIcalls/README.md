@@ -109,11 +109,16 @@ This test used `expect` and `toBe` to test that two values were exactly identica
 You can run Jest directly from the CLI (if it's globally available in your `PATH`, e.g. by `yarn global add jest` or `npm install jest --global`) with a variety of useful options.
 
 Here's how to run Jest on files matching `my-test`, using `config.json` as a configuration file and display a native OS notification after the run:
+This is to Run the integration Tests:
 
 ```bash
 yarn test or npm test
 ```
 
+This is to Run the unit Test:
+```bash
+yarn test -t 'Name of the test' or npm test -t 'Name of the test' EX: npm test -- -t 'TC-1 Add cattle info to the database fails with invalid data'
+```
 If you'd like to learn more about running `jest` through the command line, take a look at the [Jest CLI Options](https://jestjs.io/docs/cli) page.
 
 ## Additional Configuration

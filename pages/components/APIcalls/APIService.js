@@ -87,8 +87,7 @@ return true;
      }
   return true;
     },
-
-
+      
  // updating user
   async login(name, auth) {
     let state = false;
@@ -123,6 +122,25 @@ return true;
     }
     return state;
   },
+
+      filterInfo (filterInfo, index){
+      let result = [];
+      try {
+       filterInfo.map((values) => {
+              
+           for (value in values){
+               if (values[value] === index){
+                   result.push(values);
+               }
+           }
+
+       });
+      }
+      catch (err) {
+        console.log(err);
+      }
+      return result;
+    },
 
 }
 

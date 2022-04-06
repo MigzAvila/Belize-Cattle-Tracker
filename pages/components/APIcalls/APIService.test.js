@@ -1,4 +1,5 @@
 const APIService = require( "./APIService")
+const data = require("./cattleInfo")
 
 let newCattleInfo = {}
 
@@ -65,7 +66,7 @@ describe('Test api calls', () => {
    });
 
    //Test case to check cattle info successfully to the database with valid data
-   test('Add cattle info successfully to the database', async () => { 
+   test('Add cattle info successfully to the database with valid data ', async () => { 
    newCattleInfo = getValidteInfo()
    const result = await APIService.addNewCattle(newCattleInfo);
    expect(result).toBe(true);
@@ -73,14 +74,14 @@ describe('Test api calls', () => {
    });
 
    //Test case to check cattle info fails to the database with invalid data
-   test('Add cattle info fails to the database with invalid data', async () => { 
+   test('Add cattle info to the database fails with invalid data', async () => { 
    const result = await APIService.addNewCattle(newCattleInfo);
    expect(result).toBe(false);
    
   } );
 
    //Test case to check  product info successfully to the database with valid data
-   test('Add product info successfully to the database', async () => { 
+   test('Add product info to the successfully database with valid data', async () => { 
    
       newCattleInfo = {
           newCattleID: 10, 
@@ -115,7 +116,7 @@ describe('Test api calls', () => {
 
 
    //Test case to check Slaughter info successfully to the database with valid data
-   test('Add Slaughter info successfully to the database', async () => { 
+   test('Add Slaughter info successfully to the database with valid data', async () => { 
       newCattleInfo = {
         newCattleID : 100023 , 
         newFctryDest : "RTer" ,
@@ -142,6 +143,19 @@ describe('Test api calls', () => {
    expect(result).toBe(false);
    
    });
+
+   test("Test generate report Filtering works with valid id", () => {
+      let result = APIService.filterInfo(data.getData(), 100);
+      console.log(result);
+       expect(result.length).toBe(2);
+   })
+
+   
+   test("Test generate report Filtering works with invalid Id", () => {
+      let result = APIService.filterInfo(data.getData(), 1234);
+      console.log(result);
+       expect(result.length).not.toBe(0)
+   })
 
   });
   

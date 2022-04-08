@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Grid, TextField, Typography} from '@material-ui/core'
 
+// Initializing farmerPortal
 const farmerPortal =()=> {
 
 	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
@@ -9,7 +10,7 @@ const farmerPortal =()=> {
 
 	const btnStyle={margin:'15px 0', height: 100}
 	const imageStyle={borderRadius: '50%'}
-	
+	// Elements of the page. Grid and Button elements imported from the MUI library
   	return(
 		<Grid>
 			<div elevation={10} style={paperStyle}>
@@ -24,4 +25,5 @@ const farmerPortal =()=> {
 	  	</Grid>
   )
 }
+//exporting farmerPortal
 export default farmerPortal;

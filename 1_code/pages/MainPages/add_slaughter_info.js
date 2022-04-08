@@ -3,7 +3,7 @@ import {db} from '../firebase-config';
 import {collection, getDocs, addDoc} from "firebase/firestore";
 
 
-
+// Initializing slaughterInfo
 function createSlgthrInfo() {
 
     const [newSlgthrInfo, setNewSlgthrInfo] = useState({

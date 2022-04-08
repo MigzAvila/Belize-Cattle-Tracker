@@ -6,8 +6,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
 
-const cattleProfile =()=> {
-
+const cattleProfile =()=> { // Initializing cattle Profile
+//Page styling code
 	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
 	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
 	  				  borderRadius: "10px",}
@@ -15,12 +15,10 @@ const cattleProfile =()=> {
   const btnSave = {margin: '10px 0', width: '40%', height: 40, backgroundColor: 'green', align: 'right', fontSize: '13px'}; 
   const btnCancel = {margin: '10px 0', marginRight: '20%', width: '40%', height: 40, backgroundColor: 'red', align: 'left', fontSize: '13px'};
   const txtareaStyle={width: '100%', fontSize: '18px'}
-	
+	// Elements of the page. Grid, Button, TextField, and other elements imported from the MUI library
   	return(
 		<Grid>
 			<div elevation={10} style={paperStyle}>
-            <h1>{process.env.REACT_APP_TITLE}</h1>
-    <h3>{process.env.REACT_APP_DESCRIPTION}</h3>
 				<Grid align = 'center'>
 					<h2>Create New Cattle Profile</h2>
 				</Grid>
@@ -48,4 +46,4 @@ const cattleProfile =()=> {
 	  	</Grid>
   )
 }
-export default cattleProfile;
+export default cattleProfile;// Exporting cattleProfile 

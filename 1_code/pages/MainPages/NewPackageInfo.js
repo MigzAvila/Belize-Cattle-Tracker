@@ -4,8 +4,8 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 
-function packageInfo() {
-
+function packageInfo() {// Initializing packageInfo
+// Page styling
     const paperStyle = {
         padding: 20, height: 'auto', width: 350, margin: "20px auto",
         boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
@@ -17,7 +17,7 @@ function packageInfo() {
     const btnCancel = {margin: '10px 0', marginRight: '20%', width: '40%', height: 40, backgroundColor: 'red', align: 'left'};
     const txtareaStyle = { width: '100%', fontSize: '18px' };
     const [value, setValue] = React.useState(null);
-
+ // Page elements. Grid, TextField, LocalizationProvider and other elements imported from MUI library.
     return (
         <Grid>
             <div elevation={10} style={paperStyle}>
@@ -63,4 +63,4 @@ function packageInfo() {
         </Grid>
     );
 }
-export default packageInfo;
+export default packageInfo;//exporting packageInfo 

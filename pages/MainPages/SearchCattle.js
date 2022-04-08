@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
+// MUI page styling 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -47,14 +48,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const searchCattle =()=> {
+const searchCattle =()=> { //Initializing searchCattle
+  //Page styling 
 	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
 	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
 	  				  borderRadius: "10px",}
 
 	const btnStyle={margin:'30px 0', height: 40, width: '85%'}
     const alignBtn={textAlign: 'center'}
-	
+	// Page elements. Grid, Box, Search and other elements imported from MUI library.
   	return(
 		<Grid>
 			<div elevation={10} style={paperStyle}>
@@ -79,4 +81,4 @@ const searchCattle =()=> {
 	  	</Grid>
   )
 }
-export default searchCattle;
+export default searchCattle; // Exporting searchCattle

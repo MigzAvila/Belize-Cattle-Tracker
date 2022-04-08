@@ -27,7 +27,7 @@ const createDataState = (dataState) =>{
   };
 }
 
-class GenerateReport extends React.Component {
+class GenerateReport extends React.Component { // Initializing class GenerateReport
   state = createDataState({
     take: 10,
     skip: 0
@@ -36,7 +36,7 @@ class GenerateReport extends React.Component {
   dataStateChange = (event) =>{
     this.setState(createDataState(event.dataState));
   }
-
+  // Rendering and page elements. CustomerNav, Grid, Column and other elements imported from MUI library.
   render() {
     return(
       <>
@@ -64,4 +64,4 @@ class GenerateReport extends React.Component {
   }
 };
 
-export default GenerateReport;
+export default GenerateReport; // Exporting GenerateReport

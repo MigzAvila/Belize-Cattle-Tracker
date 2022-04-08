@@ -8,8 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
-const slaughterInfo =()=> {
-
+const slaughterInfo =()=> { // Initializing slaughterInfo
+  // Page styling
 	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
 	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
 	  				  borderRadius: "10px",}
@@ -19,7 +19,7 @@ const slaughterInfo =()=> {
   const btnCancel = {margin: '10px 0', marginRight: '20%', width: '40%', height: 40, backgroundColor: 'red', align: 'left'};
   const txtareaStyle={width: '100%', fontSize: '17px'}
 	const [value, setValue] = React.useState(null);
-	
+    // Page elements. Grid, LocalizationProvider and other elements implemented from MUI library.
   	return(
 		<Grid>
 			<div elevation={10} style={paperStyle}>
@@ -56,4 +56,4 @@ const slaughterInfo =()=> {
 	  	</Grid>
   )
 }
-export default slaughterInfo;
+export default slaughterInfo; // Export slaughterInfo

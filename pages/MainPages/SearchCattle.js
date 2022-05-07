@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid} from '@material-ui/core'
+import { Button, Grid, Typography, Card, CardContent} from '@material-ui/core'
 import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
@@ -48,37 +48,38 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const searchCattle =()=> { //Initializing searchCattle
-  //Page styling 
-	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
-	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
-	  				  borderRadius: "10px",}
+const searchCattle = () => { //Initializing searchCattle
 
-	const btnStyle={margin:'30px 0', height: 40, width: '85%'}
-    const alignBtn={textAlign: 'center'}
-	// Page elements. Grid, Box, Search and other elements imported from MUI library.
-  	return(
-		<Grid>
-			<div elevation={10} style={paperStyle}>
-            <h1>{process.env.REACT_APP_TITLE}</h1>
-            <h3>{process.env.REACT_APP_DESCRIPTION}</h3>
-				<Grid align = 'center'>
-					<h2>Search Cattle Profile</h2>
-                    <h4>Please enter Cattle ID below.</h4>
-				</Grid>
-                <Box sx={{ flexGrow: 1 }}>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }}/>
-                    </Search>
-                </Box>
-                <Grid style={alignBtn}>
-                    <Button  color='primary' variant='contained' style={btnStyle} fullWidth required>SEARCH</Button>
-                </Grid>
-		  	</div>
-	  	</Grid>
+  const btnStyle = { margin: '30px 0', height: 40, width: '40%' }
+  const alignBtn = { textAlign: 'center' }
+  const borderStyle = {border: '1px solid', borderRadius: '5px'}
+  // Page elements. Grid, Box, Search and other elements imported from MUI library.
+  return (
+    <div className="createInfo" style={{ marginTop: '30px' }}>
+      <Grid>
+        <Card style={{ maxWidth: 550, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
+          <CardContent>
+            <Typography gutterBottom variant="h4" align="center">
+              Search Cattle Profile
+            </Typography>
+            <Typography style={{textAlign: 'center'}}>
+              Please enter cattle ID below.
+            </Typography><br></br>
+            <Box sx={{ flexGrow: 1 }} style={borderStyle}>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }}/>
+              </Search>
+            </Box>
+            <Grid style={alignBtn}>
+              <Button color='primary' variant='contained' style={btnStyle} fullWidth required>SEARCH</Button>
+            </Grid>
+          </CardContent>
+        </Card>
+      </Grid>
+    </div>
   )
 }
 export default searchCattle; // Exporting searchCattle

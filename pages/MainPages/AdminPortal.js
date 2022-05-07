@@ -1,12 +1,16 @@
-import React from "react";
+import * as React from "react";
 import { Button, Grid, Card, CardContent, Typography} from '@material-ui/core'
+import PortalNav from "../components/RoleNavBars/PortalNavBar";
 
-// Initializing farmerPortal
-const adminPortal =()=> {
 
 	const btnStyle = { margin: '15px 0', height: 60, width: 250 }
 	// Elements of the page. Grid and Button elements imported from the MUI library
-  	return(
+  	
+class adminPortal extends React.Component {
+	render() {
+	return(
+		<>
+		<PortalNav />
 		<div className="mainMenu" style={{marginTop: '30px'}}>
 			<Grid>
 				<Card style={{ maxWidth: 600, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
@@ -29,6 +33,8 @@ const adminPortal =()=> {
 				</Card>
 			</Grid>
 		</div>
-  )
-}
+		</>
+  	)
+	}
+};
 export default adminPortal; //exporting adminPortal

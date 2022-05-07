@@ -6,19 +6,25 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 //Initializing Main Portal
 const cattleProfile = () => {
-    
+
     // Page elements. Grid, Card, CardActionArea and other elements imported from MUI library
     return (
         <div className="createInfo" style={{ marginTop: '30px' }}>
             <Grid>
-                <Card style={{ maxWidth: 550, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
+                <Card style={{ maxWidth: 550, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
+                    <IconButton>
+                        <ArrowBackIcon />
+                    </IconButton>
                     <CardContent>
                         <Typography gutterBottom variant="h4" align="center">
                             Cattle Profile
                         </Typography>
-                        <CardActionArea backgroundColor= "unset">
+                        <CardActionArea backgroundColor="unset">
                             <CardMedia
                                 component="img"
                                 height="300"

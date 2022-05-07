@@ -1,9 +1,11 @@
 import React from "react";
-import { Button, Grid, Typography, Card, CardContent} from '@material-ui/core'
+import { Button, Grid, Typography, Card, CardContent } from '@material-ui/core'
 import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // MUI page styling 
 const Search = styled('div')(({ theme }) => ({
@@ -52,17 +54,20 @@ const searchCattle = () => { //Initializing searchCattle
 
   const btnStyle = { margin: '30px 0', height: 40, width: '40%' }
   const alignBtn = { textAlign: 'center' }
-  const borderStyle = {border: '1px solid', borderRadius: '5px'}
+  const borderStyle = { border: '1px solid', borderRadius: '5px' }
   // Page elements. Grid, Box, Search and other elements imported from MUI library.
   return (
     <div className="createInfo" style={{ marginTop: '30px' }}>
       <Grid>
-        <Card style={{ maxWidth: 550, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
+        <Card style={{ maxWidth: 550, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
+          <IconButton>
+            <ArrowBackIcon />
+          </IconButton>
           <CardContent>
             <Typography gutterBottom variant="h4" align="center">
               Search Cattle Profile
             </Typography>
-            <Typography style={{textAlign: 'center'}}>
+            <Typography style={{ textAlign: 'center' }}>
               Please enter cattle ID below.
             </Typography><br></br>
             <Box sx={{ flexGrow: 1 }} style={borderStyle}>
@@ -70,7 +75,7 @@ const searchCattle = () => { //Initializing searchCattle
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
-                <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }}/>
+                <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
               </Search>
             </Box>
             <Grid style={alignBtn}>

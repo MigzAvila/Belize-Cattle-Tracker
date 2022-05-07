@@ -3,11 +3,10 @@ import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
 import PortalNav from "../components/RoleNavBars/PortalNavBar";
 import { render } from "react-dom";
 
-
 const btnStyle = { margin: '15px 0', height: 60, width: 250 }
 
 // Elements of the page. Grid and Button elements imported from the MUI library
-class farmerPortal extends React.Component {
+class pkgManagerPortal extends React.Component {
 
 	render() {
 		return (
@@ -18,12 +17,9 @@ class farmerPortal extends React.Component {
 						<Card style={{ maxWidth: 600, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
 							<CardContent>
 								<Typography gutterBottom variant="h4" align="center">
-									Farmer's Portal
+									Production/Packaging Manager Portal
 								</Typography>
 								<Grid container spacing={1} align="center">
-									<Grid xs={12}>
-										<Button color='primary' variant='contained' style={btnStyle}>Create Cattle Profile</Button>
-									</Grid>
 									<Grid xs={12}>
 										<Button color='primary' variant='contained' style={btnStyle}>Search Cattle Profile</Button>
 									</Grid>
@@ -36,4 +32,4 @@ class farmerPortal extends React.Component {
 		)
 	}
 };
-export default farmerPortal; //exporting farmerPortal
+export default pkgManagerPortal; //exporting farmerPortal

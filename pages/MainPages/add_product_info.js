@@ -12,12 +12,18 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 //key={index}
 
 function createInfo() {
 
   const [newProductInfo, setNewProductInfo] = useState({
-    newCattleID: 0,
+    newCattleID: "",
     newBatchNum: "",
     newCostPu: "",
     newExpiryDate: "",
@@ -64,6 +70,21 @@ function createInfo() {
   const btnSave = { margin: '10px 0', width: '30%', height: 40, backgroundColor: 'green', align: 'right' };
   const [value, setValue] = React.useState(null);
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleConfirm = () => {
+    createProduct();
+    setOpen(false)
+  }
+
   return (
     <div className="createInfo" style={{ marginTop: '30px' }}>
       <Grid>
@@ -72,54 +93,71 @@ function createInfo() {
             <Typography gutterBottom variant="h4" align="center">
               Create New Packaging/Product Info
             </Typography><br></br>
-            <form>
-              <Grid container spacing={1}>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Cattle ID' placeholder="Cattle ID" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newCattleID: e.target.value })} value={newProductInfo.newCattleID} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Batch Number' placeholder="Batch Number" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newBatchNum: e.target.value })} value={newProductInfo.newBatchNum} />
-                </Grid><br></br><br></br><br></br><br></br>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Factory Name' placeholder="Factory Name" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newFactoryName: e.target.value })} value={newProductInfo.newFactoryName} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Factory Destination' placeholder="Factory Destination" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newFactoryDes: e.target.value })} value={newProductInfo.newFactoryDes} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Package Date' placeholder="Package Date" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newPckgDate: e.target.value })} value={newProductInfo.newPckgDate} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Expiry Date' placeholder="Expiry Date" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newExpiryDate: e.target.value })} value={newProductInfo.newExpiryDate} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Trace Number' placeholder="Trace Number" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newTraceNum: e.target.value })} value={newProductInfo.newTraceNum} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Trade Details' placeholder="Trade Details" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newTradeDets: e.target.value })} value={newProductInfo.newTradeDets} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Meat Product Type' placeholder="Meat Product Type" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newMeatProdType: e.target.value })} value={newProductInfo.newMeatProdType} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Cost Per Unit' placeholder="Cost Per Unit" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newCostPu: e.target.value })} value={newProductInfo.newCostPu} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Store Name' placeholder="Store Name" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newStoreName: e.target.value })} value={newProductInfo.newStoreName} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Store Location' placeholder="Store Location" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newStoreLoc: e.target.value })} value={newProductInfo.newStoreLoc} />
-                </Grid>
-                <Grid xs={12} sm={6} item>
-                  <TextField label='Product Weight' placeholder="Product Weight" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newProdWeight: e.target.value })} value={newProductInfo.newProdWeight} />
-                </Grid><br></br><br></br><br></br><br></br>
-                <Grid xs={12} item>
-                  <TextField label='Product Description' multiline rows={5} placeholder="Product Description" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newProdDesc: e.target.value })} value={newProductInfo.newProdDesc} />
-                </Grid><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                <Button color='primary' variant='contained' style={btnCancel}>Cancel</Button>
-                <Button type="submit" color='primary' variant='contained' style={btnSave} onClick={createProduct}> Add Product</Button><br></br><br></br><br></br>
+            <Grid container spacing={1}>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Cattle ID' placeholder="Cattle ID" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newCattleID: e.target.value })} value={newProductInfo.newCattleID} />
               </Grid>
-            </form>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Batch Number' placeholder="Batch Number" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newBatchNum: e.target.value })} value={newProductInfo.newBatchNum} />
+              </Grid><br></br><br></br><br></br><br></br>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Factory Name' placeholder="Factory Name" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newFactoryName: e.target.value })} value={newProductInfo.newFactoryName} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Factory Destination' placeholder="Factory Destination" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newFactoryDes: e.target.value })} value={newProductInfo.newFactoryDes} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Package Date' placeholder="Package Date" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newPckgDate: e.target.value })} value={newProductInfo.newPckgDate} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Expiry Date' placeholder="Expiry Date" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newExpiryDate: e.target.value })} value={newProductInfo.newExpiryDate} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Trace Number' placeholder="Trace Number" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newTraceNum: e.target.value })} value={newProductInfo.newTraceNum} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Trade Details' placeholder="Trade Details" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newTradeDets: e.target.value })} value={newProductInfo.newTradeDets} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Meat Product Type' placeholder="Meat Product Type" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newMeatProdType: e.target.value })} value={newProductInfo.newMeatProdType} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Cost Per Unit' placeholder="Cost Per Unit" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newCostPu: e.target.value })} value={newProductInfo.newCostPu} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Store Name' placeholder="Store Name" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newStoreName: e.target.value })} value={newProductInfo.newStoreName} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Store Location' placeholder="Store Location" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newStoreLoc: e.target.value })} value={newProductInfo.newStoreLoc} />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField label='Product Weight' placeholder="Product Weight" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newProdWeight: e.target.value })} value={newProductInfo.newProdWeight} />
+              </Grid><br></br><br></br><br></br><br></br>
+              <Grid xs={12} item>
+                <TextField label='Product Description' multiline rows={5} placeholder="Product Description" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newProdDesc: e.target.value })} value={newProductInfo.newProdDesc} />
+              </Grid><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <Button color='primary' variant='contained' style={btnCancel}>Cancel</Button>
+              <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}> Add Product</Button><br></br><br></br><br></br>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">
+                  {"Confirm Addition of Record"}
+                </DialogTitle>
+                <DialogContent>
+                  <DialogContentText id="alert-dialog-description">
+                    Would you like to add these fields?<br></br>
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose}>Cancel</Button>
+                  <Button onClick={handleConfirm} autoFocus>Save</Button>
+                </DialogActions>
+              </Dialog>
+            </Grid>
           </CardContent>
         </Card>
       </Grid>

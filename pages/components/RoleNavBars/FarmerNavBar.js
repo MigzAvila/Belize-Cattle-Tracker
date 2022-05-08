@@ -10,8 +10,18 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Link from "next/link";
 
 const pages = [];
+// relative paths and names for navigation bar
+const link = [
+  { href: "/MainPages/PersonalProfile", Name: "Profile" },
+  { href: "/MainPages/FarmerPortal", Name: "My Portal" },
+  { href: "/MainPages/MyCattle", Name: "My Cattle" },
+  { href: "/MainPages/SignUp", Name:"Logout"}
+];
+
+
 const settings = ['Profile', 'My Portal', 'My Cattle','Logout'];
 
 const ResponsiveAppBar = () => {
@@ -34,6 +44,22 @@ const ResponsiveAppBar = () => {
   };
 
   const btnDisplay = {display: "block", padding: 10}
+
+    //displays navigation bar
+  const Links = ({ linkName, linkRef, index }) => {
+    return (
+      <>
+      <MenuItem style={btnDisplay} onClick={handleCloseUserMenu}>
+        <Typography textAlign="center">
+           <Link item xs={2} href={linkRef}>
+              {linkName}
+            </Link>
+          </Typography>
+      </MenuItem>
+      </>
+    );
+  };
+  
 
   return (
     <AppBar position="static">
@@ -145,11 +171,19 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {link.map((item, index) => (
+                  <Links
+                    linkName={item.Name}
+                    linkRef={item.href}
+                    key={index}
+                  />
+          ))}
+
+              {/* {settings.map((setting) => (
                 <MenuItem style={btnDisplay} key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
             </Menu>
           </Box>
         </Toolbar>

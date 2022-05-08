@@ -2,6 +2,7 @@ import * as React from "react";
 import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
 import PortalNav from "../components/RoleNavBars/PortalNavBar";
 import { render } from "react-dom";
+import Link from 'next/Link'
 
 const btnStyle = { margin: '15px 0', height: 60, width: 250 }
 
@@ -20,8 +21,11 @@ class pkgManagerPortal extends React.Component {
 									Production/Packaging Manager Portal
 								</Typography>
 								<Grid container spacing={1} align="center">
-									<Grid xs={12}>
-										<Button color='primary' variant='contained' style={btnStyle}>Search Cattle Profile</Button>
+									<Grid xs={12}>	
+										<Link href='/MainPages/SearchCattle'>
+											<Button color='primary' variant='contained' style={btnStyle}>Search Cattle Profile</Button>
+										</Link>
+										
 									</Grid>
 								</Grid>
 							</CardContent>

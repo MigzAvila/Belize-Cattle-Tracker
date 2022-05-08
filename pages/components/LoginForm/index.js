@@ -5,11 +5,21 @@ import loginClass from "../../../styles/Login.module.css";
 
 const apiService = require("../APIcalls/APIService");
 
+  //resort information for Card Details page
+export const Roles = "";
+
 const loginForm =(props)=> {
+
 
   const [userAuth, setUserAuth] = useState([]);
   const [Username, setUsername] = useState(""); //login username
   const [Password, setPassword] = useState(""); //login password
+  const [Role, setRole] = useState("Packaging"); //login Role
+
+  //passes data for resort been clicked to the CardDetails page 
+  const setUserRole = () => {
+    roles = Role;
+  };
 
   useEffect(() => {
     try {
@@ -47,6 +57,9 @@ const loginForm =(props)=> {
       props.authorize();
       updateLoginStatus(Username, status);
     }
+
+    setRole("Farmer");
+    setUserRole();
   };
 
 
@@ -71,7 +84,7 @@ const loginForm =(props)=> {
 				<Typography align="right"> 
 					
 						<span className= {loginClass.span} >
-            <Link item xs={2} href='/components/Signup'>
+            <Link item xs={2} href='/MainPages/SignUp'>
               	Sign Up? 
             </Link>
 						</span>

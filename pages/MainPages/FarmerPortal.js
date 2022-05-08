@@ -2,6 +2,7 @@ import * as React from "react";
 import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
 import FarmerPortalNav from "../components/RoleNavBars/FarmerNavBar";
 import { render } from "react-dom";
+import Link from "next/link";
 
 
 const btnStyle = { margin: '15px 0', height: 60, width: 250 }
@@ -22,10 +23,18 @@ class farmerPortal extends React.Component {
 								</Typography>
 								<Grid container spacing={1} align="center">
 									<Grid xs={12}>
-										<Button color='primary' variant='contained' style={btnStyle}>Create Cattle Profile</Button>
+										<Button color='primary' variant='contained' style={btnStyle}>
+											<Link item xs={2} href='/MainPages/add_cattle_info'>
+												Create Cattle Profile 
+											</Link>
+										</Button>
 									</Grid>
 									<Grid xs={12}>
-										<Button color='primary' variant='contained' style={btnStyle}>Search Cattle Profile</Button>
+										<Button color='primary' variant='contained' style={btnStyle}>
+												<Link item xs={2} href='/MainPages/SearchCattle'>
+												Search Cattle Profile 
+												</Link>
+										</Button>
 									</Grid>
 								</Grid>
 							</CardContent>

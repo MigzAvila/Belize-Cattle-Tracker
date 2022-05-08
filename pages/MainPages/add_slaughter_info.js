@@ -17,9 +17,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useRouter } from 'next/router'
 
 
 function createSlgthrInfo() {
+  const router = useRouter()
 
     const [newSlgthrInfo, setNewSlgthrInfo] = useState({
         newCattleID: "",
@@ -100,7 +102,7 @@ function createSlgthrInfo() {
                             <Grid xs={12} sm={6} item>
                                 <TextField label='Slaughter Date' placeholder="Slaughter Date" variant="outlined" fullWidth required onChange={(e) => setNewSlgthrInfo({ ...newSlgthrInfo, newSlghtrDate: e.target.value })} value={newSlgthrInfo.newSlghtrDate} />
                             </Grid><br></br><br></br><br></br><br></br><br></br>
-                            <Button color='primary' variant='contained' style={btnCancel}>Cancel</Button>
+                            <Button color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Button>
                             <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}> Add Slaughter Info</Button><br></br><br></br><br></br>
 
                             <Dialog

@@ -71,7 +71,7 @@ const loginForm =(props)=> {
 				<Typography align="right"> 
 					
 						<span className= {loginClass.span} >
-            <Link item xs={2} href='/components/Signup'>
+            <Link item xs={2} href='/MainPages/SignUp'>
               	Sign Up? 
             </Link>
 						</span>

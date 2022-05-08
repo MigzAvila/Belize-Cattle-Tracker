@@ -15,8 +15,6 @@ const signUpForm =()=> {
   	return(
 		<Grid>
 			<div elevation={10} style={paperStyle}>
-            <h1>{process.env.REACT_APP_TITLE}</h1>
-    <h3>{process.env.REACT_APP_DESCRIPTION}</h3>
 				<Grid align = 'center'>
 					<img src="../images/logo (2).png" width={"100px"} length={"100px"} style={imageStyle}></img>
 					<h2>Sign Up</h2>
@@ -30,7 +28,7 @@ const signUpForm =()=> {
 				<Typography align="right"> 
 					
 						<span className= {loginClass.span} >
-							<Link href='#'>
+							<Link href='/components/LoginForm'>
 								Log In? 
 							</Link>
 						</span>

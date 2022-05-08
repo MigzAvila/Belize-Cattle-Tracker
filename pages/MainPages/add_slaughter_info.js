@@ -18,6 +18,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useRouter } from 'next/router'
+import Link from 'next/Link'
 
 
 function createSlgthrInfo() {
@@ -121,7 +122,9 @@ function createSlgthrInfo() {
                                 </DialogContent>
                                 <DialogActions>
                                     <Button onClick={handleClose}>Cancel</Button>
-                                    <Button onClick={handleConfirm} autoFocus>Save</Button>
+                                    <Link href={`/MainPages/ConfirmationDialog`}>
+                                        <Button onClick={handleConfirm} autoFocus>Save</Button>
+                                    </Link>
                                 </DialogActions>
                             </Dialog>
                         </Grid>

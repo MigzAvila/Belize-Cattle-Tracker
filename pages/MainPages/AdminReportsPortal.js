@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Grid, Card, CardContent, Typography} from '@material-ui/core'
+import Link from 'next/Link'
 
 // Initializing farmerPortal
 const adminReportsPortal =()=> {
@@ -16,13 +17,19 @@ const adminReportsPortal =()=> {
 						</Typography>
 						<Grid container spacing={1} align="center">
 							<Grid xs={12}>
-								<Button color='primary' variant='contained' style={btnStyle} fullWidth required>Generate Birth Info Reports</Button>
+								<Link href="/MainPages/BirthInfoReports">
+									<Button color='primary' variant='contained' style={btnStyle} fullWidth required>Generate Birth Info Reports</Button>
+								</Link>
 							</Grid>
 							<Grid xs={12}>
-								<Button color='primary' variant='contained' style={btnStyle} fullWidth required>Generate Slaughter Info Reports</Button>
+								<Link href="/MainPages/SlaughterInfoReports">
+									<Button color='primary' variant='contained' style={btnStyle} fullWidth required>Generate Slaughter Info Reports</Button>
+								</Link>
 							</Grid>
                             <Grid xs={12}>
-								<Button color='primary' variant='contained' style={btnStyle} fullWidth required>Generate Product/Packaging Info Reports</Button>
+								<Link href="/MainPages/ProductInfoReports">
+									<Button color='primary' variant='contained' style={btnStyle} fullWidth required>Generate Product/Packaging Info Reports</Button>
+								</Link>
 							</Grid>
 						</Grid>
 					</CardContent>

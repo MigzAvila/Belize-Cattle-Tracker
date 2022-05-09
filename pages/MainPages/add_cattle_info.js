@@ -17,8 +17,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useRouter } from 'next/router'
 
 function createInfo() {
+    const router = useRouter()
 
     const [newCattleInfo, setNewCattleInfo] = useState({
         newCattleID: "",
@@ -127,7 +129,7 @@ function createInfo() {
                             <Grid xs={12} sm={6} item>
                                 <TextField label='Reproduction Status' placeholder="Reproduction Status" variant="outlined" fullWidth required onChange={(e) => setNewCattleInfo({ ...newCattleInfo, newCattleReproStat: e.target.value })} value={newCattleInfo.newCattleReproStat} />
                             </Grid><br></br><br></br><br></br><br></br><br></br>
-                            <Button color='primary' variant='contained' style={btnCancel}>Cancel</Button>
+                            <Button color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Button>
                             <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}>Add Cattle Info</Button><br></br><br></br><br></br>
                             <Dialog
                                 open={open}

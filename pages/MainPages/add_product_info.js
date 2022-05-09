@@ -140,7 +140,7 @@ function createInfo() {
               <Grid xs={12} item>
                 <TextField label='Product Description' multiline rows={5} placeholder="Product Description" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newProdDesc: e.target.value })} value={newProductInfo.newProdDesc} />
               </Grid><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-              <Button color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Button>
+              <Buttons color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Buttons>
               <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}> Add Product</Button><br></br><br></br><br></br>
               <Dialog
                 open={open}

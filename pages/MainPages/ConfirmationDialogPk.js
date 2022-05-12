@@ -8,7 +8,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import {useRouter} from 'next/router'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Link from "next/link";
-import {Roles} from './MainMenu';
 
 const confirmationDialog = () => {
     const router = useRouter()
@@ -46,9 +45,9 @@ const confirmationDialog = () => {
                                 </Typography>
                             </CardContent><br></br>
                         <Button color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Button>
-                       
+                        <Link href="/MainPages/PkgManagerPortal">
                             <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}>OK</Button>
-                      
+                        </Link>
                         <br></br>
                         <Dialog
                             open={open}
@@ -63,9 +62,7 @@ const confirmationDialog = () => {
                                 </DialogContentText>
                             </DialogContent>
                             <DialogActions>
-                                 <Link href={`/MainPages/${Roles}ManagerPortal`}>
                                 <Button onClick={handleConfirm} autoFocus>Exit</Button>
-                                  </Link>
                             </DialogActions>
                         </Dialog>
                     </CardContent>

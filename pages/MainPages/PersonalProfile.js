@@ -3,12 +3,13 @@ import { Button, Grid, Card, CardContent, Typography, TextField } from '@materia
 import PortalNav from "../components/RoleNavBars/PortalNavBar";
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useRouter } from 'next/router'
 
 
 const contStyle = { borderTop: "1px solid", width: '100%', padding: 5, borderLeft: 0, borderRight: 0 }
 
-class personalProfile extends React.Component {
-    render() {
+const personalProfile = () => {
+     const router = useRouter()
         return (
             <>
                 <PortalNav />
@@ -16,7 +17,7 @@ class personalProfile extends React.Component {
                     <Grid>
                         <Card style={{ maxWidth: 550, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
                             <IconButton>
-                                <ArrowBackIcon />
+                                <ArrowBackIcon onClick={() => router.back()}/>
                             </IconButton>
                             <CardContent>
                                 <Typography gutterBottom variant="h4" align="center">
@@ -62,6 +63,5 @@ class personalProfile extends React.Component {
                 </div>
             </>
         )
-    }
 };
 export default personalProfile; //exporting adminPortal

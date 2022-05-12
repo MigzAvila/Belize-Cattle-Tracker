@@ -6,6 +6,8 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Link from "next/link";
+import { useRouter } from 'next/router';
 
 // MUI page styling 
 const Search = styled('div')(({ theme }) => ({
@@ -51,6 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const searchCattle = () => { //Initializing searchCattle
+  const router = useRouter()
 
   const btnStyle = { margin: '30px 0', height: 40, width: '40%' }
   const alignBtn = { textAlign: 'center' }
@@ -61,7 +64,7 @@ const searchCattle = () => { //Initializing searchCattle
       <Grid>
         <Card style={{ maxWidth: 550, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
           <IconButton>
-            <ArrowBackIcon />
+            <ArrowBackIcon onClick={() => router.back()} />
           </IconButton>
           <CardContent>
             <Typography gutterBottom variant="h4" align="center">
@@ -79,7 +82,9 @@ const searchCattle = () => { //Initializing searchCattle
               </Search>
             </Box>
             <Grid style={alignBtn}>
-              <Button color='primary' variant='contained' style={btnStyle} fullWidth required>SEARCH</Button>
+              <Link href='/MainPages/CattleProfile'>
+                <Button color='primary' variant='contained' style={btnStyle} fullWidth required>SEARCH</Button>
+              </Link>
             </Grid>
           </CardContent>
         </Card>

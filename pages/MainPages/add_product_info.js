@@ -17,10 +17,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Link from 'next/Link'
+import { useRouter } from 'next/router'
 
 //key={index}
 
 function createInfo() {
+    const router = useRouter()
 
   const [newProductInfo, setNewProductInfo] = useState({
     newCattleID: "",
@@ -79,6 +82,7 @@ function createInfo() {
 
   const handleClose = () => {
     setOpen(false);
+
   };
 
   const handleConfirm = () => {
@@ -137,7 +141,7 @@ function createInfo() {
               <Grid xs={12} item>
                 <TextField label='Product Description' multiline rows={5} placeholder="Product Description" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newProdDesc: e.target.value })} value={newProductInfo.newProdDesc} />
               </Grid><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-              <Button color='primary' variant='contained' style={btnCancel}>Cancel</Button>
+              <Buttons color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Buttons>
               <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}> Add Product</Button><br></br><br></br><br></br>
               <Dialog
                 open={open}
@@ -155,7 +159,9 @@ function createInfo() {
                 </DialogContent>
                 <DialogActions>
                   <Button onClick={handleClose}>Cancel</Button>
-                  <Button onClick={handleConfirm} autoFocus>Save</Button>
+                  <Link href="/MainPages/ConfirmationDialog">                         
+                    <Button onClick={handleConfirm} autoFocus>Save</Button>
+                  </Link>
                 </DialogActions>
               </Dialog>
             </Grid><br></br><br></br>

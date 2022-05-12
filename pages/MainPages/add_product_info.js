@@ -68,6 +68,7 @@ function createInfo() {
 
   const btnCancel = { margin: '10px 0', marginLeft: '15%', marginRight: '10%', width: '30%', height: 40, backgroundColor: 'red', align: 'left' };
   const btnSave = { margin: '10px 0', width: '30%', height: 40, backgroundColor: 'green', align: 'right' };
+  const btnStyle = { margin: '15px 0', height: 40, width: '35%' }
   const [value, setValue] = React.useState(null);
 
   const [open, setOpen] = React.useState(false);
@@ -157,6 +158,9 @@ function createInfo() {
                   <Button onClick={handleConfirm} autoFocus>Save</Button>
                 </DialogActions>
               </Dialog>
+            </Grid><br></br><br></br>
+            <Grid align="center">
+              <Button color='primary' variant='contained' align="center" style={btnStyle}>Generate QR Code</Button>
             </Grid>
           </CardContent>
         </Card>

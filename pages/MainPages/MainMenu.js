@@ -16,7 +16,7 @@ const mainPortal = () => {
 
 const setRole = (role) => {
 	Roles = role
-	window.localStorage.setItem("Role", JSON.stringify(Roles))
+	window.localStorage.setItem("Role", Roles)
 }
 
 

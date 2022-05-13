@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
-import PortalNav from "../components/RoleNavBars/PortalNavBar";
 import { render } from "react-dom";
 import Link from "next/link";
+
+import SlaughterPortalNav from "../components/RoleNavBars/SlaughterNavBar";
 
 const btnStyle = { margin: '15px 0', height: 60, width: 250 }
 
@@ -12,7 +13,7 @@ class slaughterManagerPortal extends React.Component {
 	render() {
 		return (
 			<>
-				<PortalNav />
+				<SlaughterPortalNav />
 				<div className="mainMenu" style={{ marginTop: '30px' }}>
 					<Grid>
 						<Card style={{ maxWidth: 600, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>

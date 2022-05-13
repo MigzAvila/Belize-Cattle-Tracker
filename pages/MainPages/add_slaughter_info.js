@@ -122,7 +122,7 @@ function createSlgthrInfo() {
                                 </DialogContent>
                                 <DialogActions>
                                     <Button onClick={handleClose}>Cancel</Button>
-                                    <Link href={`/MainPages/ConfirmationDialog`}>
+                                    <Link href={`/MainPages/SuccessAlert`}>
                                         <Button onClick={handleConfirm} autoFocus>Save</Button>
                                     </Link>
                                 </DialogActions>

@@ -20,9 +20,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Link from 'next/Link'
 import { useRouter } from 'next/router'
 
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-
-import SuccessAlert from '../MainPages/SuccessAlert';
 
 //key={index}
 

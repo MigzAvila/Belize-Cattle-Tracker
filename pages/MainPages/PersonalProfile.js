@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Grid, Card, CardContent, Typography, TextField } from '@material-ui/core'
+import { Button, Grid, Card, CardContent, Typography, Link } from '@material-ui/core'
 import PortalNav from "../components/RoleNavBars/PortalNavBar";
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -51,9 +51,11 @@ const personalProfile = () => {
                                     <CardContent style={contStyle} align="center">
                                         <br></br>
                                         <CardContent>
+                                            <Link href={`/MainPages/ChangePassword`}>
                                             <Button color="primary" variant='contained'>
                                                 Change Password
                                             </Button>
+                                            </Link>
                                         </CardContent>
                                     </CardContent>
                                 </Grid>

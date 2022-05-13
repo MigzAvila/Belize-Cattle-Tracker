@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
+import { Button, Grid, Card, CardContent, Typography, Link } from '@material-ui/core'
 
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-const confirmationDialog = () => {
+const passwordSuccess = () => {
     const router = useRouter()
 
     // Elements of the page. Grid and Button elements imported from the MUI library
@@ -27,16 +27,19 @@ const confirmationDialog = () => {
     return (
         <div className="mainMenu" style={{ marginTop: '30px' }} align={"center"}>
             <Grid>
-                <Card style={{ maxWidth: 600, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset"}}>
+                <Card style={{ maxWidth: 600, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
                     <CardContent>
                         <Grid>
-                        <CheckCircleOutlineIcon  color="success" fontSize="large"/>
+                            <CheckCircleOutlineIcon color="success" fontSize="large" />
                         </Grid>
                         <Grid>
-                        <Typography id="alert-dialog-description">
-                                    <br></br>Record has been created successfully!<br></br>
-                                </Typography><br></br>
-                                <Button onClick={() => router.back()} autoFocus>Exit</Button>
+                            <Typography id="alert-dialog-description">
+                                <br></br>Password has been changed successfully!<br></br>
+                            </Typography><br></br>
+                            <Link href='/MainPages/PersonalProfile'>
+                                <Button autoFocus>Exit</Button>
+                            </Link>
+
                         </Grid>
                     </CardContent>
                 </Card>
@@ -44,4 +47,4 @@ const confirmationDialog = () => {
         </div>
     )
 }
-export default confirmationDialog; //exporting adminPortal
+export default passwordSuccess; 

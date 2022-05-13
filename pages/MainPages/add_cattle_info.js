@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import { db } from '../firebase-config';
 import { collection, getDocs, addDoc } from "firebase/firestore";
-import { Button, Grid, TextField, Card, CardContent, Typography } from '@material-ui/core'
+import { Button, Grid, TextField, Card, CardContent, Typography, Link } from '@material-ui/core'
 
 
 import Table from '@mui/material/Table';
@@ -147,7 +147,9 @@ function createInfo() {
                                 </DialogContent>
                                 <DialogActions>
                                     <Button onClick={handleClose}>Cancel</Button>
-                                    <Button onClick={handleConfirm} autoFocus>Save</Button>
+                                    <Link href={`/MainPages/SuccessAlert`}>
+                                        <Button onClick={handleConfirm} autoFocus>Save</Button>
+                                    </Link>
                                 </DialogActions>
                             </Dialog>
                         </Grid>

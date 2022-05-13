@@ -5,7 +5,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Link from "next/link";
 
@@ -37,13 +37,13 @@ const confirmationDialog = () => {
                         <Typography gutterBottom variant="h4" align="center">
                             Confirm Transfer
                         </Typography>
-                            <CardContent align='center'>
-                                <Typography>
-                                    Are you sure?
-                                    <br></br>
-                                    <b>NOTE:</b> Your ability to edit this profile will be terminated.
-                                </Typography>
-                            </CardContent><br></br>
+                        <CardContent align='center'>
+                            <Typography>
+                                Are you sure?
+                                <br></br>
+                                <b>NOTE:</b> Your ability to edit this profile will be terminated.
+                            </Typography>
+                        </CardContent><br></br>
                         <Button color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Button>
                         <Link href="/MainPages/PkgManagerPortal">
                             <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}>OK</Button>
@@ -56,7 +56,7 @@ const confirmationDialog = () => {
                             aria-describedby="alert-dialog-description"
                         >
                             <DialogContent align="center">
-                                <CheckCircleOutlineIcon  color="success" fontSize="large"/>
+                                <CheckCircleOutlineIcon color="success" fontSize="large" />
                                 <DialogContentText id="alert-dialog-description">
                                     <br></br>Cattle has been successfully added to the next stage!<br></br>
                                 </DialogContentText>

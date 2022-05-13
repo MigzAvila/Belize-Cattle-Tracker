@@ -1,6 +1,11 @@
 import React from "react";
 import { DataGrid } from '@mui/x-data-grid';
-import { Card, Typography } from '@material-ui/core'
+import { Card, Typography, Grid } from '@material-ui/core'
+
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import PrintIcon from '@mui/icons-material/Print';
+
 
 const columns = [
     { field: 'id', headerName: 'Cattle ID', type: 'number', width: 100 },
@@ -24,17 +29,25 @@ const rows = [
 export default function DataTable() {
     return (
         <div className="createInfo" style={{ marginTop: '30px' }}>
-            <Card style={{ maxWidth: 1050, height: "auto", padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
+            <Card style={{ maxWidth: 1050, height: "auto", padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
+                <IconButton>
+                    <ArrowBackIcon />
+                </IconButton>
                 <Typography gutterBottom variant="h4" align="center">
                     Birth Information Reports
                 </Typography>
                 <DataGrid
-                    style={{ maxWidth: 1050, height: 600, padding: "20px 5px", margin: "0 auto", border: "none", paddingTop: 0 }}
+                    style={{ maxWidth: 1050, height: 600, padding: "20px 5px", margin: "0 auto", border: "none", paddingTop: 0, paddingBottom: 0 }}
                     rows={rows}
                     columns={columns}
                     pageSize={10}
                     rowsPerPageOptions={[10]}
                 />
+                <Grid align="right">
+                    <IconButton fontSize="large">
+                        <PrintIcon />
+                    </IconButton>
+                </Grid>
             </Card>
 
         </div>

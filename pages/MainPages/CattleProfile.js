@@ -29,9 +29,9 @@ const cattleProfile = () => {
         <div className="createInfo" style={{ marginTop: '30px' }}>
             <Grid>
                 <Card style={{ maxWidth: 550, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
-                        <IconButton>
-                            <ArrowBackIcon onClick={() => router.back()} />
-                        </IconButton>
+                    <IconButton>
+                        <ArrowBackIcon onClick={() => router.back()} />
+                    </IconButton>
                     <CardContent>
                         <Typography gutterBottom variant="h4" align="center">
                             Cattle Profile
@@ -53,9 +53,9 @@ const cattleProfile = () => {
                                         Farmer: Bob Ross
                                     </Typography>
                                 </CardContent>
-                             </CardActionArea>
+                            </CardActionArea>
                         </Link>
-{/* 
+                        {/* 
                         { Roles === "Slaughter"?
                          (<Link href="/MainPages/CSlaughterDetails">
                              <CardActionArea backgroundColor="unset">

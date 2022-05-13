@@ -20,10 +20,14 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Link from 'next/Link'
 import { useRouter } from 'next/router'
 
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+
+import SuccessAlert from '../MainPages/SuccessAlert';
+
 //key={index}
 
 function createInfo() {
-    const router = useRouter()
+  const router = useRouter()
 
   const [newProductInfo, setNewProductInfo] = useState({
     newCattleID: "",
@@ -141,7 +145,7 @@ function createInfo() {
               <Grid xs={12} item>
                 <TextField label='Product Description' multiline rows={5} placeholder="Product Description" variant="outlined" fullWidth required onChange={(e) => setNewProductInfo({ ...newProductInfo, newProdDesc: e.target.value })} value={newProductInfo.newProdDesc} />
               </Grid><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-              <Buttons color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Buttons>
+              <Button color='primary' variant='contained' style={btnCancel} onClick={() => router.back()}>Cancel</Button>
               <Button color='primary' variant='contained' style={btnSave} onClick={handleClickOpen}> Add Product</Button><br></br><br></br><br></br>
               <Dialog
                 open={open}
@@ -159,12 +163,12 @@ function createInfo() {
                 </DialogContent>
                 <DialogActions>
                   <Button onClick={handleClose}>Cancel</Button>
-                  <Link href="/MainPages/ConfirmationDialog">                         
-                    <Button onClick={handleConfirm} autoFocus>Save</Button>
+                  <Link href={`/MainPages/SuccessAlert`}>
+                  <Button onClick={handleConfirm} autoFocus>Save</Button>
                   </Link>
                 </DialogActions>
               </Dialog>
-            </Grid><br></br><br></br>
+            </Grid><br></br>
             <Grid align="center">
               <Button color='primary' variant='contained' align="center" style={btnStyle}>Generate QR Code</Button>
             </Grid>

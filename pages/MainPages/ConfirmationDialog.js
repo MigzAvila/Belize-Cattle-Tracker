@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
-
+import {useEffect, useState } from "react"
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -18,6 +18,15 @@ const confirmationDialog = () => {
     const btnSave = { margin: '10px 0', width: '30%', height: 40, backgroundColor: 'green', align: 'right' };
 
     const [open, setOpen] = React.useState(false);
+
+    const [extraRole, setExtraRole] = useState("")
+
+
+  	useEffect(() => {
+		let data = window.localStorage.getItem("Role")
+        setExtraRole(data)
+
+, []	})
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -63,7 +72,7 @@ const confirmationDialog = () => {
                                 </DialogContentText>
                             </DialogContent>
                             <DialogActions>
-                                 <Link href={`/MainPages/${Roles}ManagerPortal`}>
+                                 <Link href={`/MainPages/${extraRole}ManagerPortal`}>
                                 <Button onClick={handleConfirm} autoFocus>Exit</Button>
                                   </Link>
                             </DialogActions>

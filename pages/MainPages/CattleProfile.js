@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react"
 import { Grid } from '@material-ui/core'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -14,8 +15,15 @@ import { Roles } from './MainMenu';
 
 //Initializing Main Portal
 const cattleProfile = () => {
-    const router = useRouter()
+    const [extraRole, setExtraRole] = useState("")
 
+  const router = useRouter()
+  	useEffect(() => {
+		let data = window.localStorage.getItem("Role")
+        setExtraRole(data)
+
+, []	})
+    
     // Page elements. Grid, Card, CardActionArea and other elements imported from MUI library
     return (
         <div className="createInfo" style={{ marginTop: '30px' }}>
@@ -28,9 +36,16 @@ const cattleProfile = () => {
                         <Typography gutterBottom variant="h4" align="center">
                             Cattle Profile
                         </Typography>
-                        <Link href={`/MainPages/C${Roles}Details`}>
-                            <CardActionArea backgroundColor="unset">
-                                <CardContent style={{ padding: "20px" }}>
+                        <Link href={`/MainPages/C${extraRole}Details`}>
+                             <CardActionArea backgroundColor="unset">
+                                <CardMedia
+                                    component="img"
+                                    height="300"
+                                    width="80"
+                                    image="../images/cattle.png"
+                                    alt="cattle"
+                                />
+                                <CardContent style={{padding: "20px"}}>
                                     <Typography gutterBottom variant="h5" component="div">
                                         Cattle ID: 40453
                                     </Typography>

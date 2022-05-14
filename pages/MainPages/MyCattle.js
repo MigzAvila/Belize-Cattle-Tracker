@@ -29,13 +29,6 @@ const myCattle = () => {
                             <Typography gutterBottom variant="h4" align="center">
                                 My Cattle
                             </Typography>
-                            <CardMedia
-                                    component="img"
-                                    height="300"
-                                    width="80"
-                                    image="../images/cattle.png"
-                                    alt="cattle"
-                                />
                             <CardActionArea backgroundColor="unset">
                                     <Link href="/MainPages/CattleProfile">
                                     <CardContent>

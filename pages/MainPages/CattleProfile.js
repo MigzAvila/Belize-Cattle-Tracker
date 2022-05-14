@@ -17,13 +17,14 @@ import { Roles } from './MainMenu';
 const cattleProfile = () => {
     const [extraRole, setExtraRole] = useState("")
 
-  const router = useRouter()
-  	useEffect(() => {
-		let data = window.localStorage.getItem("Role")
+    const router = useRouter()
+    useEffect(() => {
+        let data = window.localStorage.getItem("Role")
         setExtraRole(data)
 
-, []	})
-    
+            , []
+    })
+
     // Page elements. Grid, Card, CardActionArea and other elements imported from MUI library
     return (
         <div className="createInfo" style={{ marginTop: '30px' }}>
@@ -37,15 +38,8 @@ const cattleProfile = () => {
                             Cattle Profile
                         </Typography>
                         <Link href={`/MainPages/C${extraRole}Details`}>
-                             <CardActionArea backgroundColor="unset">
-                                <CardMedia
-                                    component="img"
-                                    height="300"
-                                    width="80"
-                                    image="../images/cattle.png"
-                                    alt="cattle"
-                                />
-                                <CardContent style={{padding: "20px"}}>
+                            <CardActionArea backgroundColor="unset">
+                                <CardContent style={{ padding: "20px" }}>
                                     <Typography gutterBottom variant="h5" component="div">
                                         Cattle ID: 40453
                                     </Typography>

@@ -1,10 +1,11 @@
 import React from "react";
 import { DataGrid } from '@mui/x-data-grid';
-import { Card, Typography, Grid} from '@material-ui/core'
+import { Card, Typography, Grid } from '@material-ui/core'
 
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PrintIcon from '@mui/icons-material/Print';
+import { useRouter } from 'next/router'
 
 const columns = [
     { field: 'id', headerName: 'Cattle ID', type: 'number', width: 100 },
@@ -28,11 +29,16 @@ const rows = [
 ];
 
 export default function DataTable() {
+    const router = useRouter()
+    const printPage = () => {
+        window.print();
+
+    }
     return (
         <div className="createInfo" style={{ marginTop: '30px' }}>
             <Card style={{ maxWidth: 1050, height: "auto", padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
                 <IconButton>
-                    <ArrowBackIcon />
+                    <ArrowBackIcon onClick={() => router.back()} />
                 </IconButton>
                 <Typography gutterBottom variant="h4" align="center">
                     Product/Packaging Information Reports
@@ -46,7 +52,7 @@ export default function DataTable() {
                 />
                 <Grid align="right">
                     <IconButton fontSize="large">
-                        <PrintIcon />
+                        <PrintIcon onClick={printPage} />
                     </IconButton>
                 </Grid>
             </Card>

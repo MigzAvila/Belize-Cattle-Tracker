@@ -1,5 +1,5 @@
 import React from "react";
-import {useEffect} from "react"
+import { useEffect } from "react"
 import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
 import Link from "next/link";
 
@@ -12,16 +12,17 @@ const mainPortal = () => {
 	useEffect(() => {
 		window.localStorage.setItem("Role", JSON.stringify(Roles))
 
-, [Roles]	})
+			, [Roles]
+	})
 
-const setRole = (role) => {
-	Roles = role
-	window.localStorage.setItem("Role", Roles)
-}
+	const setRole = (role) => {
+		Roles = role
+		window.localStorage.setItem("Role", Roles)
+	}
 
 
 	return (
-		<div className="mainMenu" style={{marginTop: '30px'}}>
+		<div className="mainMenu" style={{ marginTop: '30px' }}>
 			<Grid>
 				<Card style={{ maxWidth: 600, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
 					<CardContent>
@@ -52,7 +53,7 @@ const setRole = (role) => {
 							</Grid>
 							<Grid xs={12}>
 								<Button color='primary' variant='contained' style={btnStyle} onClick={() => setRole("Admin")} fullWidth>
-									<Link href="/MainPages/AdminPortal">
+									<Link href="/MainPages/AdminManagerPortal">
 										ADMIN: BAHA
 									</Link>
 								</Button>

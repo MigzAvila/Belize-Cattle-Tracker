@@ -45,8 +45,8 @@ const cProductDetails = () => {
                     <Typography gutterBottom variant="h4" align="center">
                         Cattle ID: add cattle id from DB
                         <Typography paragraph>
-                                The info from the database should be displayed here.
-                            </Typography>
+                            The info from the database should be displayed here.
+                        </Typography>
                     </Typography>
                     <CardContent>
                         <Typography paragraph>

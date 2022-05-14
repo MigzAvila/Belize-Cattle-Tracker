@@ -17,11 +17,12 @@ const loginForm = (props) => {
   const [Password, setPassword] = useState(""); //login password
   const [Role, setRole] = useState("Packaging"); //login Role
 
-  //passes data for resort been clicked to the CardDetails page 
-  const setUserRole = () => {
-    roles = Role;
-  };
+    const [extraRole, setExtraRole] = useState("")
+  	useEffect(() => {
+		let data = window.localStorage.getItem("Role")
+        setExtraRole(data)
 
+, []	})
   useEffect(() => {
     try {
       apiService.getUsers().then((res) => {
@@ -61,7 +62,6 @@ const loginForm = (props) => {
     }
 
     setRole("Farmer");
-    setUserRole();
   };
 
   const btnStyle = { margin: '30px 0' }

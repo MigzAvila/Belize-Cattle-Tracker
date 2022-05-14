@@ -9,7 +9,7 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Button } from '@material-ui/core'
-import Link from 'next/Link'
+import Link from "next/Link"
 import { useRouter } from 'next/router'
 
 

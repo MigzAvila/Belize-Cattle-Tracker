@@ -13,7 +13,7 @@ const App = ({ text }) => {
   }, [])
     return (
     <div>
-      <img src={src}/>
+      <img src={src} style={{position: 'absolute; left: 1053px; top: 450px;', width:'10%', height:'20%'} }/>
     </div>
   )
 }

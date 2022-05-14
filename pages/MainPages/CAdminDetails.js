@@ -9,6 +9,8 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Button } from '@material-ui/core'
+import Link from 'next/Link'
+import { useRouter } from 'next/router'
 
 
 const ExpandMore = styled((props) => {
@@ -24,6 +26,7 @@ const ExpandMore = styled((props) => {
 
 //Initializing Main Portal
 const cBirthDetails = () => {
+    const router = useRouter()
 
     const [expanded, setExpanded] = React.useState(false);
 
@@ -101,8 +104,10 @@ const cBirthDetails = () => {
                         </CardContent>
                     </Collapse><br></br>
                     <Grid>
-                        <Button color='primary' variant='contained' style={btnExit}>Exit</Button>
-                        <Button type="submit" color='primary' variant='contained' style={btnAdd}>Add</Button><br></br>
+                        <Button color='primary' variant='contained' style={btnExit} onClick={() => router.back()}>Exit</Button>
+                        <Link href="/MainPages/add_product_info">
+                            <Button type="submit" color='primary' variant='contained' style={btnAdd}>Add</Button>
+                        </Link>
                     </Grid>
                 </Card>
             </Grid>

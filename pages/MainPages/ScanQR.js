@@ -3,7 +3,8 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import CustomerNav from "../components/CustomerNavBar/index";
+import ReactDOM from 'react-dom';
+import App from '../App';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -17,7 +18,6 @@ const Item = styled(Paper)(({ theme }) => ({
 const ScanQR = () => {
   return (
     <>
-    <CustomerNav />
       <Grid
         container
         justifyContent="center"
@@ -28,9 +28,21 @@ const ScanQR = () => {
         <Grid item xs={10}>
           <Item sx={{ fontSize: "30px", fontWeight: "bold" }}>Scan QR</Item>
           <Item sx={{ fontSize: "15px" }}>Scanning page</Item>
+          </Grid>
+          
+  <React.StrictMode>
+    <App text = 
+    "antbio_type: tetracycline. birth_date: 01/12/2020 breed: Hereford cattle_id : 340 cattle_weight : 134lbs dna_type: Roman Briton, welsh combination farmer: Bob Smith gender: male location: Spanish Lookout rearing_type: free roaming repro_stat: none und_hlth_issues: bovine mastitis"
+    />
+  </React.StrictMode>
+
         </Grid>
-      </Grid>
+
+      
+
+
     </>
+    
   );
 };
 

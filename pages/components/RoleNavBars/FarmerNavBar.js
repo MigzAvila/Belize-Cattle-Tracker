@@ -16,7 +16,6 @@ const pages = [];
 // relative paths and names for navigation bar
 const link = [
   { href: "/MainPages/PersonalProfile", Name: "Profile" },
-  { href: "/MainPages/FarmerPortal", Name: "My Portal" },
   { href: "/MainPages/MyCattle", Name: "My Cattle" },
   { href: "/MainPages/TransferBirth", Name:"Transferral"},
   { href: "/MainPages/SignUp", Name:"Logout"}

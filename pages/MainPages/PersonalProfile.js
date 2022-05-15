@@ -25,7 +25,7 @@ const personalProfile = () => {
                         <Card style={{ maxWidth: 550, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
                             <Link href={ `/MainPages/${extraRole}ManagerPortal`}>
                             <IconButton>
-                                <ArrowBackIcon onClick={() => router.back()}/>
+                                <ArrowBackIcon/>
                             </IconButton>
                             </Link>
                             <CardContent>

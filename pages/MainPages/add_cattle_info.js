@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { db } from '../firebase-config';
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { collection, getDocs, doc, addDoc, setDoc } from "firebase/firestore";
 import { Button, Grid, TextField, Card, CardContent, Typography, Link } from '@material-ui/core'
 
 
@@ -46,11 +46,11 @@ function createInfo() {
         let status = await apiService.addNewCattle(newCattleInfo);
         console.log(status);
         if (status) {
-            await addDoc(cattleInfoCollection, {
+            await setDoc(doc(db, "cattle_info", newCattleInfo.newCattleID), {
                 cattle_id: newCattleInfo.newCattleID, antbio_type: newCattleInfo.newCattleAntbio, breed: newCattleInfo.newCattleBreed,
                 gender: newCattleInfo.newCattleGender, cattle_weight: newCattleInfo.newCattleWeight, dna_type: newCattleInfo.newCattleDna, eartag_code: newCattleInfo.newCattleTag,
                 farmer: newCattleInfo.newCattleFarmer, location: newCattleInfo.newCattleLocation, und_hlth_issues: newCattleInfo.newCattleHissue,
-                rearing_type: newCattleInfo.newCattleReartype, repro_stat: newCattleInfo.newCattleReproStat
+                rearing_type: newCattleInfo.newCattleReartype, repro_stat: newCattleInfo.newCattleReproStat, trans_stat: ["Farmer"]
             })
         }
     };

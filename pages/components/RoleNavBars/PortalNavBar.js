@@ -16,7 +16,6 @@ const pages = [];
 const settings = ['Profile', 'My Portal', 'Logout'];
 const link = [
   { href: "/MainPages/PersonalProfile", Name: "Profile" },
-  { href: "/MainPages/MyCattle", Name: "My Cattle" },
   { href: "/MainPages/SignUp", Name:"Logout"}
 ];
 

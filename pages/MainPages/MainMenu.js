@@ -32,7 +32,7 @@ const mainPortal = () => {
 						<Grid container spacing={1}>
 							<Grid xs={12}>
 								<Button color='primary' variant='contained' style={btnStyle} onClick={() => setRole("Farmer")} fullWidth>
-									<Link href="/MainPages/FarmerPortal">
+									<Link href="/MainPages/FarmerManagerPortal">
 										Birth Stage Info: Farmer/BAHA
 									</Link>
 								</Button>

@@ -68,6 +68,8 @@ const searchCattle = () => { //Initializing searchCattle
   
   //use effect called whenever the page renders and gets the cattle info and displays
   useEffect(() => {
+		let data = window.localStorage.getItem("Role")
+    setExtraRole(data)
     const getCattleInfo = async () => {
       const data = await getDocs(cattleInfoCollection);
       setCattleInfo(data.docs.map((doc) => ({ ...doc.data(), id: doc.cattle_id })));
@@ -83,8 +85,6 @@ const searchCattle = () => { //Initializing searchCattle
     console.log(e.target.value)
     let searchResult = cattleInfo.filter((cattle) => cattle.cattle_id === search);
     setSearchResult(searchResult);
-		let data = window.localStorage.getItem("Role")
-    setExtraRole(data)
   }
 
   const refresh = () => {

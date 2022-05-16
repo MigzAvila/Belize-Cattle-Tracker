@@ -105,7 +105,7 @@ const searchCattle = () => { //Initializing searchCattle
               <IconButton >
                 <ArrowBackIcon />
               </IconButton>
-            <Link>
+            </Link>
             <Search>
               <SearchIconWrapper>
                 <SearchIcon />

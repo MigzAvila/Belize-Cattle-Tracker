@@ -63,7 +63,7 @@ const cattleInfoCollection = collection(db, "sign_up");
     console.log(user)
     event.preventDefault();
     //checks if username name matches with password
-    let actual_password = user.find((user) => user.email === Username);
+    let actual_password = user.find((user) => user.role_id === Username);
 
     console.log(actual_password)
     

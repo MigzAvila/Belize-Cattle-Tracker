@@ -60,6 +60,9 @@ const searchCattle = () => { //Initializing searchCattle
   const [cattleInfo, setCattleInfo] = useState([]);
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+
+    const [extraRole, setExtraRole] = useState("")
+
   
   const cattleInfoCollection = collection(db, "cattle_info");
   
@@ -80,6 +83,8 @@ const searchCattle = () => { //Initializing searchCattle
     console.log(e.target.value)
     let searchResult = cattleInfo.filter((cattle) => cattle.cattle_id === search);
     setSearchResult(searchResult);
+		let data = window.localStorage.getItem("Role")
+    setExtraRole(data)
   }
 
   const refresh = () => {
@@ -96,11 +101,11 @@ const searchCattle = () => { //Initializing searchCattle
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Box display="flex" alignItems="center">
-            <Link href="/">
-              <IconButton>
+            <Link href={`/MainPages/${extraRole}ManagerPortal`}>
+              <IconButton >
                 <ArrowBackIcon />
               </IconButton>
-            </Link>
+            <Link>
             <Search>
               <SearchIconWrapper>
                 <SearchIcon />

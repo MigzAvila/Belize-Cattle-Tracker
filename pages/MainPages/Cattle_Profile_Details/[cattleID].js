@@ -4,7 +4,7 @@ import { collection, doc } from "firebase/firestore";
 import { db } from '../../firebase-config';
 import { getDocs } from "firebase/firestore";
 import { Box, Card, CardActions, CardContent, CircularProgress, Collapse, Grid, IconButton, Link, Typography } from '@material-ui/core';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //import { ExpandMore } from '@material-ui/icons';
 //import Typography from 'typography';
 //import { CardContent, Typography } from 'react-native-material-cards';;
@@ -43,6 +43,17 @@ const CattleProfileDetails = () => {
     const [cattleIinfo, setCattleInfo] = React.useState(null);
     const [search, setSearch] = useState("");
     const [searchResult, setSearchResult] = useState([]);
+    const [extraRole, setExtraRole] = useState("")
+
+
+    useEffect(() => {
+        let data = window.localStorage.getItem("Role")
+        setExtraRole(data.toLowerCase())
+
+            , []
+    })
+
+
 
     const cattleInfoCollection = collection(db, "cattle_info");
  
@@ -142,7 +153,7 @@ const CattleProfileDetails = () => {
                     </Collapse><br></br>
                     <Grid>
                         <Button color='primary' variant='contained' style={btnExit} onClick={() => router.back()}>Exit</Button>
-                        <Link href="/MainPages/add_cattle_info">
+                        <Link href={`/MainPages/add_${extraRole}_info`}>
                             <Button type="submit" color='primary' variant='contained' style={btnAdd}>Add</Button>
                         </Link>
                     </Grid>

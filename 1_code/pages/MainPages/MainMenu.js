@@ -1,29 +1,90 @@
 import React from "react";
-import { Button, Grid} from '@material-ui/core'
+import { useEffect, useState } from "react"
+import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
+import Link from "next/link";
+import LoginForm from "../components/LoginForm"
+import { db } from '../firebase-config';
+import { collection, getDocs } from "firebase/firestore"; 
 
-const mainPortal =()=> {
+// export [showRole, setShowRole] = useState("")
+export const Roles = "";
 
-	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
-	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
-	  				  borderRadius: "10px",}
+const MainPortal = () => {
+	const cattleInfoCollection = collection(db, "sign_up");
 
-	const btnStyle={margin:'15px 0', height: 60}
-	const imageStyle={borderRadius: '50%'}
-	
-  	return(
-		<Grid>
-			<div elevation={10} style={paperStyle}>
-            <h1>{process.env.REACT_APP_TITLE}</h1>
-    <h3>{process.env.REACT_APP_DESCRIPTION}</h3>
-				<Grid align = 'center'>
-					<h2>Belize Cattle Tracker Portal</h2>
-				</Grid>
-				<Button  color='primary' variant='contained' style={btnStyle} fullWidth>Birth Stage Info: Farmer/BAHA</Button>
-                <Button  color='primary' variant='contained' style={btnStyle} fullWidth>Slaughter Stage: Slaughterhouse Manager</Button>
-                <Button  color='primary' variant='contained' style={btnStyle} fullWidth>Processing/Packaging Stage: Production/Packaging Manager</Button>
-                <Button  color='primary' variant='contained' style={btnStyle} fullWidth>ADMIN: BAHA</Button>
-		  	</div>
-	  	</Grid>
-  )
+	const btnStyle = { margin: '15px 0', height: 60 }
+	const [isAuth, setIsAuth] = useState(false);
+
+    const authorize = () => {
+    setIsAuth(true);
+		window.localStorage.setItem("isLogIn", "true")
+  };
+
+	useEffect(() => {
+		let userLog = (window.localStorage.getItem("isLogIn"))
+		if (userLog === "true") {
+			window.localStorage.setItem("isLogIn", "false")
+		}
+
+			
+	}, [])
+
+
+
+	const setRole = (role) => {
+		Roles = role
+		window.localStorage.setItem("Role", Roles)
+	}
+
+
+	return (
+		<>
+		{true? (
+			<div>
+			<Grid>
+				<Card style={{ maxWidth: 600, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
+					<CardContent>
+						<Typography gutterBottom variant="h4" align="center">
+							Create Cattle Info
+						</Typography>
+						<Grid container spacing={1}>
+							<Grid xs={12}>
+								<Button color='primary' variant='contained' style={btnStyle} onClick={() => setRole("Farmer")} fullWidth>
+									<Link href="/MainPages/FarmerManagerPortal">
+										Birth Stage Info: Farmer/BAHA
+									</Link>
+								</Button>
+							</Grid>
+							<Grid xs={12}>
+								<Button color='primary' variant='contained' style={btnStyle} onClick={() => setRole("Slaughter")} fullWidth>
+									<Link href="/MainPages/SlaughterManagerPortal">
+										Slaughter Stage: Slaughterhouse Manager
+									</Link>
+								</Button>
+							</Grid>
+							<Grid xs={12}>
+								<Button color='primary' variant='contained' style={btnStyle} onClick={() => setRole("Product")} fullWidth>
+									<Link href="/MainPages/ProductManagerPortal">
+										Processing/Packaging Stage: Production/Packaging Manager
+									</Link>
+								</Button>
+							</Grid>
+							<Grid xs={12}>
+								<Button color='primary' variant='contained' style={btnStyle} onClick={() => setRole("Admin")} fullWidth>
+									<Link href="/MainPages/AdminManagerPortal">
+										ADMIN: BAHA
+									</Link>
+								</Button>
+							</Grid>
+						</Grid>
+					</CardContent>
+				</Card>
+			</Grid>
+		</div>
+
+		): <LoginForm isAuth={isAuth} authorize={authorize}/>}
+		</>
+
+	)
 }
-export default mainPortal;
+export default MainPortal;

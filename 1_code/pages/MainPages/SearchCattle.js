@@ -1,9 +1,17 @@
 import React from "react";
-import { Button, Grid} from '@material-ui/core'
+import { Button, Grid, Typography, Card, CardContent, Input } from '@material-ui/core'
 import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Link from "next/link";
+import { db } from '../firebase-config';
+import { collection, getDocs } from "firebase/firestore"; 
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+
 // MUI page styling 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -47,36 +55,113 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const searchCattle =()=> {
-	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
-	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
-	  				  borderRadius: "10px",}
+const searchCattle = () => { //Initializing searchCattle
+  const router = useRouter()
+  const [cattleInfo, setCattleInfo] = useState([]);
+  const [search, setSearch] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
 
-	const btnStyle={margin:'30px 0', height: 40, width: '85%'}
-    const alignBtn={textAlign: 'center'}
-	// Page elements. Grid, Box, Search and other elements imported from MUI library.
-  	return(
-		<Grid>
-			<div elevation={10} style={paperStyle}>
-            <h1>{process.env.REACT_APP_TITLE}</h1>
-            <h3>{process.env.REACT_APP_DESCRIPTION}</h3>
-				<Grid align = 'center'>
-					<h2>Search Cattle Profile</h2>
-                    <h4>Please enter Cattle ID below.</h4>
-				</Grid>
-                <Box sx={{ flexGrow: 1 }}>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }}/>
-                    </Search>
-                </Box>
-                <Grid style={alignBtn}>
-                    <Button  color='primary' variant='contained' style={btnStyle} fullWidth required>SEARCH</Button>
-                </Grid>
-		  	</div>
-	  	</Grid>
+    const [extraRole, setExtraRole] = useState("")
+
+  
+  const cattleInfoCollection = collection(db, "cattle_info");
+  
+  //use effect called whenever the page renders and gets the cattle info and displays
+  useEffect(() => {
+		let data = window.localStorage.getItem("Role")
+    setExtraRole(data)
+    const getCattleInfo = async () => {
+      const data = await getDocs(cattleInfoCollection);
+      setCattleInfo(data.docs.map((doc) => ({ ...doc.data(), id: doc.cattle_id })));
+    };
+    getCattleInfo();
+  }
+  , [])
+
+  //console.log(cattleInfo)
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    console.log(e.target.value)
+    let searchResult = cattleInfo.filter((cattle) => cattle.cattle_id === search);
+    setSearchResult(searchResult);
+  }
+
+  const refresh = () => {
+    setSearch("");
+    setSearchResult([]);
+  }
+
+  const btnStyle = { margin: '30px 0', height: 40, width: '40%' }
+  const alignBtn = { textAlign: 'center' }
+  const borderStyle = { border: '1px solid', borderRadius: '5px' }
+  // Page elements. Grid, Box, Search and other elements imported from MUI library.
+  return (
+    <div className="createInfo" style={{ marginTop: '30px' }}>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Box display="flex" alignItems="center">
+            <Link href={`/MainPages/${extraRole}ManagerPortal`}>
+              <IconButton >
+                <ArrowBackIcon />
+              </IconButton>
+            </Link>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+
+                placeholder="Search cattle"
+                inputProps={{ 'aria-label': 'search cattle' }}
+                onChange={handleSearch}
+                onKeepers={handleSearch}
+                value={search}
+              />
+            </Search>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <Typography variant="h5" component="h2">
+                Search Results
+              </Typography>
+              <Typography variant="body2" component="p">
+
+                {searchResult.length !== 0 ?
+                 (<div>
+                    <Link href={`/MainPages/Cattle_Profile_Details/${searchResult[0].cattle_id}`}>                
+                                            <Button variant="contained" color="primary">
+                                {searchResult[0].cattle_id}
+                                            </Button>
+                                        </Link>
+                                    </div>): <></>
+
+                }
+
+
+                {/* {searchResult.map((cattle) => (
+                  <div>
+                    <Typography variant="body2" gutterBottom>
+                                {searchResult.map((cattle) => (
+                                    <div>
+                                        <Link href={`/MainPages/Cattle_Profile_Details/${cattle.cattle_id}`}>                
+                                            <Button variant="contained" color="primary">
+                                                {cattle.cattle_id}
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                ))}
+                            </Typography>
+                  </div>
+                ))} */}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+    </div>
   )
 }
 export default searchCattle; // Exporting searchCattle

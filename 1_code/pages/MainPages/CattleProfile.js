@@ -1,52 +1,101 @@
 import React from "react";
-import {Grid} from '@material-ui/core'
+import { useEffect, useState } from "react"
+import { Grid } from '@material-ui/core'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Link from "next/link";
+import { useRouter } from 'next/router'
+import { Roles } from './MainMenu';
+
 //Initializing Main Portal
-const mainPortal =()=> {
-    // Page styling
-	const paperStyle={padding :20, height: 'auto', width: 350, margin:"20px auto",
-	 				  boxShadow: "0px 6px 6px -3px rgb(0 0 0 / 20%), 0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%)",
-	  				  borderRadius: "10px",}
+const cattleProfile = () => {
+    const [extraRole, setExtraRole] = useState("")
 
-	const btnStyle={margin:'15px 0', height: 60}
-	
+    const router = useRouter()
+    useEffect(() => {
+        let data = window.localStorage.getItem("Role")
+        setExtraRole(data)
+
+            , []
+    })
+
     // Page elements. Grid, Card, CardActionArea and other elements imported from MUI library
-  	return(
-		<Grid>
-			<div elevation={10} style={paperStyle}>
-            <h1>{process.env.REACT_APP_TITLE}</h1>
-            <h3>{process.env.REACT_APP_DESCRIPTION}</h3>
-				<Grid align = 'center'>
-					<h2>Cattle Profiles</h2>
-				</Grid>
-				
-                <Card sx={{ maxWidth: 345 }}>
-                    <CardActionArea>
-                        <CardMedia
-                            component="img"
-                            height="155"
-                            image="../images/cattle.png"
-                            alt="cattle"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Cattle ID: 40453
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Farmer: Bob Ross
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
+    return (
+        <div className="createInfo" style={{ marginTop: '30px' }}>
+            <Grid>
+                <Card style={{ maxWidth: 550, padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
+                    <IconButton>
+                        <ArrowBackIcon onClick={() => router.back()} />
+                    </IconButton>
+                    <CardContent>
+                        <Typography gutterBottom variant="h4" align="center">
+                            Cattle Profile
+                        </Typography>
+                        <Link href={`/MainPages/C${extraRole}Details`}>
+                            <CardActionArea backgroundColor="unset">
+                                <CardContent style={{ padding: "20px" }}>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        Cattle ID: 40453
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        Farmer: Bob Ross
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Link>
+                        {/* 
+                        { Roles === "Slaughter"?
+                         (<Link href="/MainPages/CSlaughterDetails">
+                             <CardActionArea backgroundColor="unset">
+                            <CardMedia
+                                component="img"
+                                height="300"
+                                width="80"
+                                image="../images/cattle.png"
+                                alt="cattle"
+                            />
+                            <CardContent style={{padding: "20px"}}>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Cattle ID: 40453
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Farmer: Bob Ross
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        </Link>): <></>}
 
-		  	</div>
-	  	</Grid>
-  )
+                        { Roles === "Packaging"?
+                         (<Link href="/MainPages/CProductDetails">
+                             <CardActionArea backgroundColor="unset">
+                            <CardMedia
+                                component="img"
+                                height="300"
+                                width="80"
+                                image="../images/cattle.png"
+                                alt="cattle"
+                            />
+                            <CardContent style={{padding: "20px"}}>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Cattle ID: 40453
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    Farmer: Bob Ross
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        </Link>): <></>} */}
+                    </CardContent>
+                </Card>
+            </Grid>
+        </div>
+
+    )
 }
-// Exporting mainPortal 
-export default mainPortal;
+export default cattleProfile; // Exporting mainPortal

@@ -20,49 +20,48 @@ const Item = styled(Paper)(({ theme }) => ({
   background: "transparent",
 }));
 
-const createDataState = (dataState) =>{
-  return{
+const createDataState = (dataState) => {
+  return {
     result: process(cattle_info.slice(0), dataState),
     dataState: dataState
   };
 }
 
-class GenerateReport extends React.Component {// Initializing class GenerateReport
+class GenerateReport extends React.Component { // Initializing class GenerateReport
   state = createDataState({
     take: 10,
     skip: 0
   });
 
-  // Rendering and page elements. CustomerNav, Grid, Column and other elements imported from MUI library.
-  dataStateChange = (event) =>{
+  dataStateChange = (event) => {
     this.setState(createDataState(event.dataState));
   }
-
+  // Rendering and page elements. CustomerNav, Grid, Column and other elements imported from MUI library.
   render() {
-    return(
+    return (
       <>
-      <CustomerNav />
-      <Grid
-        data={this.state.result}
-        {...this.state.dataState}
-        onDataStateChange={this.dataStateChange}
-        sortable={true}
-        pageable={true}
+        <CustomerNav />
+        <Grid
+          data={this.state.result}
+          {...this.state.dataState}
+          onDataStateChange={this.dataStateChange}
+          sortable={true}
+          pageable={true}
 
-        pageSize={8}
+          pageSize={8}
         >
-          <Column field="cattle_id" title="Cattle ID" filter={'numeric'} ColumnMenu={ColumnMenu}/>
-          <Column field="dna_type" title="DNA" ColumnMenu={ColumnMenu}/>
-          <Column field="birth_date" title="DOB" ColumnMenu={ColumnMenu}/>
-          <Column field="breed" title="Breed" ColumnMenu={ColumnMenu}/>
-          <Column field="farmer" title="Farmer" ColumnMenu={ColumnMenu}/>
-          <Column field="gender" title="Gender" ColumnMenu={ColumnMenu}/>
-          <Column field="location" title="Location" ColumnMenu={ColumnMenuCheckboxFilter}/>
-          <Column field="eartag_code" title="Ear Tag" ColumnMenu={ColumnMenu}/>
+          <Column field="cattle_id" title="Cattle ID" filter={'numeric'} ColumnMenu={ColumnMenu} />
+          <Column field="dna_type" title="DNA" ColumnMenu={ColumnMenu} />
+          <Column field="birth_date" title="DOB" ColumnMenu={ColumnMenu} />
+          <Column field="breed" title="Breed" ColumnMenu={ColumnMenu} />
+          <Column field="farmer" title="Farmer" ColumnMenu={ColumnMenu} />
+          <Column field="gender" title="Gender" ColumnMenu={ColumnMenu} />
+          <Column field="location" title="Location" ColumnMenu={ColumnMenuCheckboxFilter} />
+          <Column field="eartag_code" title="Ear Tag" ColumnMenu={ColumnMenu} />
         </Grid>
-        </>
+      </>
     )
   }
 };
 
-export default GenerateReport;// Exporting GenerateReport 
+export default GenerateReport; // Exporting GenerateReport

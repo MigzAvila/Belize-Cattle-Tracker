@@ -192,8 +192,6 @@ const ContactUs = () => {
     </>
   );
 };
-<<<<<<< Updated upstream
-=======
 
 // const ContactUs = () => {
 //   return (
@@ -231,6 +229,5 @@ const ContactUs = () => {
 //     </>
 //   );
 // };
->>>>>>> Stashed changes
 
 export default ContactUs;

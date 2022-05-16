@@ -23,8 +23,14 @@ const columns = [
 ];
 
 const rows = [
-    { id: 1, farmer: "Bob Ross", breed: "Brahma", gender: "Male" }
-];
+        { id: 1, farmer: "Bob Ross", breed: "Hereford", gender: "Male", weight: "400lbs", antibio: "medicine", dna: "Hereford", tag: "12233", location: "Spanish Lookout", hIssues: "None", rearType: "Free Roaming", reproStatus: "None" },
+        { id: 2, farmer: "Bob Ross", breed: "Hereford", gender: "Female", weight: "300lbs", antibio: "medicine", dna: "Hereford", tag: "12344", location: "Spanish Lookout", hIssues: "None", rearType: "Free Roaming", reproStatus: "None" },
+        { id: 3, farmer: "Bob Ross", breed: "Hereford", gender: "Male", weight: "654lbs", antibio: "medicine", dna: "Hereford", tag: "2345", location: "Spanish Lookout", hIssues: "None", rearType: "Free Roaming", reproStatus: "None" },
+        { id: 4, farmer: "Bob Ross", breed: "Hereford", gender: "Female", weight: "651lbs", antibio: "penicillin", dna: "Hereford", tag: "244", location: "Spanish Lookout", hIssues: "None", rearType: "Free Roaming", reproStatus: "None" },
+        { id: 5, farmer: "Bob Ross", breed: "Hereford", gender: "Female", weight: "300lbs", antibio: "medicine", dna: "Hereford", tag: "1234", location: "Spanish Lookout", hIssues: "None", rearType: "Free Roaming", reproStatus: "None" }
+        
+    ];
+
 
 export default function DataTable() {
     const router = useRouter()

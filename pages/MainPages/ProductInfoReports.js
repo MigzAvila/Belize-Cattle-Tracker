@@ -25,7 +25,10 @@ const columns = [
 ];
 
 const rows = [
-    { id: 1, batchNum: 678, costPerUnit: 250, factName: "Running W", factDest: "San Ignacio, Cayo" }
+        { id: 36, batchNum: 123, costPerUnit: 12.31, factName: "Running W", factDest: "San Ignacio, Cayo", meatProdType: "Ribs", expDate: "April 30, 2022", pckgDate: "March 1, 2022", prodDesc: "10% Lean", prodWeight: "12lbs", strName: "Luckys", strLoc: "Belmopan", traceNum: "36", tradeDetails: "Cash"},
+        { id: 35, batchNum: 123, costPerUnit: 12.25, factName: "Running W", factDest: "San Ignacio, Cayo", meatProdType: "Ribs", expDate: "April 30, 2022", pckgDate: "March 1, 2022", prodDesc: "10% Lean", prodWeight: "12lbs", strName: "Luckys", strLoc: "Belmopan", traceNum: "35", tradeDetails: "Cash"},
+        { id: 111, batchNum: 80, costPerUnit: 18.90, factName: "Running W", factDest: "San Ignacio, Cayo", meatProdType: "Legs", expDate: "December 25, 2022", pckgDate: "May 25, 2022", prodDesc: "7% Lean", prodWeight: "20lbs", strName: "123Mart", strLoc: "San Ignacio", traceNum: "111", tradeDetails: "Credit"},
+        { id: 9, batchNum: 80, costPerUnit: 18.90, factName: "Running W", factDest: "San Ignacio, Cayo", meatProdType: "Legs", expDate: "December 25, 2022", pckgDate: "May 25, 2022", prodDesc: "7% Lean", prodWeight: "20lbs", strName: "123Mart", strLoc: "San Ignacio", traceNum: "9", tradeDetails: "Credit"}
 ];
 
 export default function DataTable() {

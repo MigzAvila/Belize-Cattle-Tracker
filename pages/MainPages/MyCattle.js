@@ -33,7 +33,7 @@ const myCattle = () => {
                                     <Link href="/MainPages/CattleProfile">
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            Cattle ID: 40453
+                                            Cattle ID: 36
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
                                             Farmer: Bob Ross

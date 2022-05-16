@@ -119,7 +119,6 @@ function transferBirth() {
                         </Grid><br></br><br></br>
                         <Grid align="center">
                             <Button color='primary' variant='contained' style={btnStyle} onClick={handleClickOpen}>Transfer to Slaughter Stage</Button>
-                               <Button color='primary' variant='contained' style={btnStyle}  onClick={update} autoFocus>test</Button>
                             <Dialog
                                 open={open}
                                 onClose={handleClose}

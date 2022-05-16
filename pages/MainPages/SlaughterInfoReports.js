@@ -18,7 +18,11 @@ const columns = [
 ];
 
 const rows = [
-    { id: 1, batchNum: 345, factName: 'Running W', factDest: 'Spanish Lookout, Cayo' },
+        { id: 35, batchNum: 12, factName: 'Running W', factDest: 'Spanish Lookout, Cayo', slaughterDate: 'May 4, 2022', slaughterMthd: 'stunning', traceNum: '35' },
+        { id: 36, batchNum: 8, factName: 'Running W', factDest: 'Spanish Lookout, Cayo', slaughterDate: 'February 28, 2022', slaughterMthd: 'stunning', traceNum: '36' },
+        { id: 111, batchNum: 7, factName: 'Running W', factDest: 'Spanish Lookout, Cayo', slaughterDate: 'March 1, 2022', slaughterMthd: 'stunning', traceNum: '111' },
+        { id: 980, batchNum: 9, factName: 'Running W', factDest: 'Spanish Lookout, Cayo', slaughterDate: 'May 1, 2022', slaughterMthd: 'stunning', traceNum: '980' },
+        { id: 9, batchNum: 23, factName: 'Running W', factDest: 'Spanish Lookout, Cayo', slaughterDate: 'April 12, 2022', slaughterMthd: 'stunning', traceNum: '9' }
 ];
 
 export default function DataTable() {

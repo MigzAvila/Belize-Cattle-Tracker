@@ -41,7 +41,7 @@ const cattleProfile = () => {
                             <CardActionArea backgroundColor="unset">
                                 <CardContent style={{ padding: "20px" }}>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        Cattle ID: 40453
+                                        Cattle ID: 36
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         Farmer: Bob Ross

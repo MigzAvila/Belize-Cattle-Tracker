@@ -42,18 +42,18 @@ const cBirthDetails = () => {
         <div className="createInfo" style={{ marginTop: '30px' }}>
             <Grid>
                 <Card style={{ maxWidth: 550, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
-                    <Typography gutterBottom variant="h4" align="center">
-                        Cattle ID: add cattle id from DB
+                <Typography gutterBottom variant="h4" align="center">
+                        Cattle ID: 36
                     </Typography>
                     <CardContent>
                         <Typography paragraph>
-                            Farmer:
+                            Farmer: Bob Ross
                         </Typography>
                         <Typography paragraph>
-                            Gender:
+                            Gender: Male
                         </Typography>
                         <Typography paragraph>
-                            Breed:
+                            Breed: Hereford
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
@@ -72,34 +72,34 @@ const cBirthDetails = () => {
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
                         <CardContent>
                             <Typography paragraph>
-                                The info from the database should be displayed here.
+                               
                             </Typography>
                             <Typography paragraph align="center" fontWeight="bold">
                                 Birth Info
                             </Typography>
                             <Typography paragraph>
-                                Birth Date:
+                                Birth Date: April 3, 2021
                             </Typography>
                             <Typography paragraph>
-                                Underlying Health Issues:
+                                Underlying Health Issues: None
                             </Typography>
                             <Typography paragraph>
-                                Weight:
+                                Weight: 400 lbs
                             </Typography>
                             <Typography paragraph>
-                                Location:
+                                Location: Spanish Lookout
                             </Typography>
                             <Typography paragraph>
-                                Rearing Type:
+                                Rearing Type: Free Roaming
                             </Typography>
                             <Typography paragraph>
-                                Antibiotics Used:
+                                Antibiotics Used: Medicine 
                             </Typography>
                             <Typography paragraph>
-                                Reproduction Status:
+                                Reproduction Status: None
                             </Typography>
                             <Typography paragraph>
-                                DNA Type:
+                                DNA Type: Hereford 
                             </Typography>
                         </CardContent>
                     </Collapse><br></br>

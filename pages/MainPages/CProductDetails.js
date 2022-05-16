@@ -42,21 +42,21 @@ const cProductDetails = () => {
         <div className="createInfo" style={{ marginTop: '30px' }}>
             <Grid>
                 <Card style={{ maxWidth: 550, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
-                    <Typography gutterBottom variant="h4" align="center">
-                        Cattle ID: add cattle id from DB
+                <Typography gutterBottom variant="h4" align="center">
+                    Cattle ID: 36
                         <Typography paragraph>
-                            The info from the database should be displayed here.
+                            
                         </Typography>
                     </Typography>
                     <CardContent>
                         <Typography paragraph>
-                            Farmer:
+                            Farmer: Bob Ross
                         </Typography>
                         <Typography paragraph>
-                            Gender:
+                            Gender: Male
                         </Typography>
                         <Typography paragraph>
-                            Breed:
+                            Breed: Hereford
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
@@ -74,52 +74,52 @@ const cProductDetails = () => {
                     </CardActions>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
                         <CardContent>
-                            <Typography paragraph align="center" fontWeight="bold">
+                        <Typography paragraph align="center" fontWeight="bold">
                                 Birth Info
                             </Typography>
                             <Typography paragraph>
-                                Birth Date:
+                                Birth Date: April 3, 2021
                             </Typography>
                             <Typography paragraph>
-                                Underlying Health Issues:
+                                Underlying Health Issues: None
                             </Typography>
                             <Typography paragraph>
-                                Weight:
+                                Weight: 400 lbs
                             </Typography>
                             <Typography paragraph>
-                                Location:
+                                Location: Spanish Lookout
                             </Typography>
                             <Typography paragraph>
-                                Rearing Type:
+                                Rearing Type: Free Roaming
                             </Typography>
                             <Typography paragraph>
-                                Antibiotics Used:
+                                Antibiotics Used: Medicine 
                             </Typography>
                             <Typography paragraph>
-                                Reproduction Status:
+                                Reproduction Status: None
                             </Typography>
                             <Typography paragraph>
-                                DNA Type:
+                                DNA Type: Hereford 
                             </Typography>
                         </CardContent>
                         <CardContent>
-                            <Typography paragraph align="center" fontWeight="bold">
+                        <Typography paragraph align="center" fontWeight="bold">
                                 Slaughter Info
                             </Typography>
                             <Typography paragraph>
-                                Slaughter Date:
+                                Slaughter Date: Februaury 28, 2022
                             </Typography>
                             <Typography paragraph>
-                                Slaughterhouse Name:
+                                Slaughterhouse Name: Running W
                             </Typography>
                             <Typography paragraph>
-                                Slaughtering Methods Used:
+                                Slaughtering Methods Used: Stunning
                             </Typography>
                             <Typography paragraph>
-                                Factory Name:
+                                Factory Name:Running W
                             </Typography>
                             <Typography paragraph>
-                                Factory Location:
+                                Factory Location: San Ignacio
                             </Typography>
                         </CardContent>
                         <CardContent>
@@ -127,37 +127,37 @@ const cProductDetails = () => {
                                 Product/Packaging Info
                             </Typography>
                             <Typography paragraph>
-                                Company Name:
+                                Company Name: Running W
                             </Typography>
                             <Typography paragraph>
-                                Meat Product Type:
+                                Meat Product Type: Ribs
                             </Typography>
                             <Typography paragraph>
-                                Product Description:
+                                Product Description: 10% lean
                             </Typography>
                             <Typography paragraph>
-                                Product Weight:
+                                Product Weight: 12 lbs
                             </Typography>
                             <Typography paragraph>
-                                Packaging Date:
+                                Packaging Date: March 1, 2022
                             </Typography>
                             <Typography paragraph>
-                                Expiry Date:
+                                Expiry Date: April 30, 2022
                             </Typography>
                             <Typography paragraph>
-                                Batch Number:
+                                Batch Number: 123
                             </Typography>
                             <Typography paragraph>
-                                Store Name:
+                                Store Name: Luckys
                             </Typography>
                             <Typography paragraph>
-                                Store Location:
+                                Store Location: Belmoopan
                             </Typography>
                             <Typography paragraph>
-                                Cost Per Unit
+                                Cost Per Unit: 12.31
                             </Typography>
                             <Typography paragraph>
-                                Trading Details
+                                Trading Details: Cash 
                             </Typography>
                         </CardContent>
                     </Collapse><br></br>

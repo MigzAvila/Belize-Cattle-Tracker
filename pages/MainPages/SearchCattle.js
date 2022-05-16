@@ -77,6 +77,7 @@ const searchCattle = () => { //Initializing searchCattle
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
+    console.log(e.target.value)
     let searchResult = cattleInfo.filter((cattle) => cattle.cattle_id === search);
     setSearchResult(searchResult);
   }
@@ -109,6 +110,7 @@ const searchCattle = () => { //Initializing searchCattle
                 placeholder="Search cattle"
                 inputProps={{ 'aria-label': 'search cattle' }}
                 onChange={handleSearch}
+                onKeepers={handleSearch}
                 value={search}
               />
             </Search>
@@ -121,7 +123,20 @@ const searchCattle = () => { //Initializing searchCattle
                 Search Results
               </Typography>
               <Typography variant="body2" component="p">
-                {searchResult.map((cattle) => (
+
+                {searchResult.length !== 0 ?
+                 (<div>
+                    <Link href={`/MainPages/Cattle_Profile_Details/${searchResult[0].cattle_id}`}>                
+                                            <Button variant="contained" color="primary">
+                                {searchResult[0].cattle_id}
+                                            </Button>
+                                        </Link>
+                                    </div>): <></>
+
+                }
+
+
+                {/* {searchResult.map((cattle) => (
                   <div>
                     <Typography variant="body2" gutterBottom>
                                 {searchResult.map((cattle) => (
@@ -135,7 +150,7 @@ const searchCattle = () => { //Initializing searchCattle
                                 ))}
                             </Typography>
                   </div>
-                ))}
+                ))} */}
               </Typography>
             </CardContent>
           </Card>

@@ -5,35 +5,47 @@ import loginClass from "../../../styles/Login.module.css";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 const apiService = require("../APIcalls/APIService");
+import { db } from '../../firebase-config';
+import { collection, getDocs } from "firebase/firestore"; 
 
 //resort information for Card Details page
 export const Roles = "";
 
 const loginForm = (props) => {
-
+const cattleInfoCollection = collection(db, "sign_up");
 
   const [userAuth, setUserAuth] = useState([]);
   const [Username, setUsername] = useState(""); //login username
   const [Password, setPassword] = useState(""); //login password
   const [Role, setRole] = useState("Packaging"); //login Role
+	const [user, setuser] = useState(false);
+
 
     const [extraRole, setExtraRole] = useState("")
   	useEffect(() => {
-		let data = window.localStorage.getItem("Role")
-        setExtraRole(data)
+		
+    const getUserInfo = async () => {
+       let data1 = await getDocs(cattleInfoCollection);
+    
+      setuser(data1.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+			
+		};
+		getUserInfo();
+      // window.localStorage.getItem("Role", JSON.stringify(userAuth))
 
-, []	})
-  useEffect(() => {
-    try {
-      apiService.getUsers().then((res) => {
+    }, [userAuth])
 
-        setUserAuth(res);
-      });
-    } catch (e) {
-      console.log(e);
-      setUserAuth([]);
-    }
-  }, [props.isAuth]);
+  // useEffect(() => {
+  //   try {
+  //     apiService.getUsers().then((res) => {
+
+  //       setUserAuth(res);
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //     setUserAuth([]);
+  //   }
+  // }, [props.isAuth]);
 
   const handleChange = (prop) => (event) => {
     if (prop === "password") {
@@ -48,17 +60,20 @@ const loginForm = (props) => {
   }
 
   const handleLoginCredentials = (event) => {
+    console.log(user)
     event.preventDefault();
     //checks if username name matches with password
-    let actual_password = userAuth.find((user) => user.name === Username);
+    let actual_password = user.find((user) => user.email === Username);
+
+    console.log(actual_password)
+    
     const status = false;
     if (actual_password) {
-      status = actual_password["password"] === Password ? true : false;
+      status = actual_password.pw === Password ? true : false;
     }
 
     if (status) {
       props.authorize();
-      updateLoginStatus(Username, status);
     }
 
     setRole("Farmer");
@@ -79,7 +94,9 @@ const loginForm = (props) => {
               </Grid>
               <TextField label='Role ID' placeholder='Enter Role ID' onChange={handleChange("username")} fullWidth required />
               <TextField label='Password' placeholder='Enter Password' type='password' onChange={handleChange("password")} fullWidth required />
+              <Link item xs={2} href='/MainPages/MainMenu'>
               <Button color='primary' variant='contained' style={btnStyle} fullWidth onClick={handleLoginCredentials}>Log in</Button>
+               </Link>
               <Typography align="right">
                 <span className={loginClass.span} >
                   <Link item xs={2} href='/MainPages/SignUp'>

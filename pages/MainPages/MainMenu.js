@@ -1,19 +1,35 @@
 import React from "react";
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Button, Grid, Card, CardContent, Typography } from '@material-ui/core'
 import Link from "next/link";
+import LoginForm from "../components/LoginForm"
+import { db } from '../firebase-config';
+import { collection, getDocs } from "firebase/firestore"; 
 
 // export [showRole, setShowRole] = useState("")
 export const Roles = "";
 
-const mainPortal = () => {
+const MainPortal = () => {
+	const cattleInfoCollection = collection(db, "sign_up");
 
 	const btnStyle = { margin: '15px 0', height: 60 }
-	useEffect(() => {
-		window.localStorage.setItem("Role", JSON.stringify(Roles))
+	const [isAuth, setIsAuth] = useState(false);
 
-			, [Roles]
-	})
+    const authorize = () => {
+    setIsAuth(true);
+		window.localStorage.setItem("isLogIn", "true")
+  };
+
+	useEffect(() => {
+		let userLog = (window.localStorage.getItem("isLogIn"))
+		if (userLog === "true") {
+			window.localStorage.setItem("isLogIn", "false")
+		}
+
+			
+	}, [])
+
+
 
 	const setRole = (role) => {
 		Roles = role
@@ -22,7 +38,9 @@ const mainPortal = () => {
 
 
 	return (
-		<div className="mainMenu" style={{ marginTop: '30px' }}>
+		<>
+		{isAuth? (
+			<div>
 			<Grid>
 				<Card style={{ maxWidth: 600, padding: "20px 5px", margin: "0 auto", backgroundColor: "unset" }}>
 					<CardContent>
@@ -64,6 +82,9 @@ const mainPortal = () => {
 			</Grid>
 		</div>
 
+		): <LoginForm isAuth={isAuth} authorize={authorize}/>}
+		</>
+
 	)
 }
-export default mainPortal;
+export default MainPortal;

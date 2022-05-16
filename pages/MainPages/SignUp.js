@@ -5,10 +5,15 @@ import Link from "next/link";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
+
 const signUpForm = () => {
 
 	const btnStyle = { margin: '30px 0' }
 	const imageStyle = { borderRadius: '50%' }
+
+	useEffect(() => {
+		window.localStorage.setItem("isLogIn", "false")
+	}, [])
 
 	return (
 		<Grid>

@@ -16,8 +16,8 @@ const pages = [];
 const settings = ['Profile', 'My Portal', 'Logout'];
 const link = [
   { href: "/MainPages/PersonalProfile", Name: "Profile" },
-  { href: "/MainPages/TransferSlaughter", Name:"Transferral"},
-  { href: "/MainPages/SignUp", Name:"Logout"}
+  { href: "/MainPages/TransferSlaughter", Name: "Transferral" },
+  { href: "/MainPages/MainMenu", Name: "Logout" }
 ];
 
 const ResponsiveAppBar = () => {
@@ -39,6 +39,15 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  const logoutUser = (name) => {
+    if (name === "Logout") {
+      let userLog = (window.localStorage.getItem("isLogIn"))
+      if (userLog === "true") {
+        window.localStorage.setItem("isLogIn", "false")
+      }
+    }
+  }
+
   const btnDisplay = {display: "block", padding: 10}
 
   //displays navigation bar
@@ -46,7 +55,7 @@ const ResponsiveAppBar = () => {
     return (
       <>
       <MenuItem style={btnDisplay} onClick={handleCloseUserMenu}>
-        <Typography textAlign="center">
+        <Typography textAlign="center" onClick={() => logoutUser(linkName)}>
            <Link item xs={2} href={linkRef}>
               {linkName}
             </Link>

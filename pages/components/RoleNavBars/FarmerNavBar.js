@@ -18,7 +18,7 @@ const link = [
   { href: "/MainPages/PersonalProfile", Name: "Profile" },
   { href: "/MainPages/MyCattle", Name: "My Cattle" },
   { href: "/MainPages/TransferBirth", Name:"Transferral"},
-  { href: "/MainPages/SignUp", Name:"Logout"}
+  { href: "/MainPages/MainMenu", Name:"Logout"}
 ];
 
 
@@ -42,7 +42,14 @@ const ResponsiveAppBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const logoutUser = (name) => {
+    if (name === "Logout") {
+      let userLog = (window.localStorage.getItem("isLogIn"))
+      if (userLog === "true") {
+        window.localStorage.setItem("isLogIn", "false")
+      }
+    }
+  }
   const btnDisplay = {display: "block", padding: 10}
 
     //displays navigation bar
@@ -50,8 +57,8 @@ const ResponsiveAppBar = () => {
     return (
       <>
       <MenuItem style={btnDisplay} onClick={handleCloseUserMenu}>
-        <Typography textAlign="center">
-           <Link item xs={2} href={linkRef}>
+        <Typography textAlign="center" onClick={() => logoutUser(linkName)}>
+           <Link item xs={2} href={linkRef} >
               {linkName}
             </Link>
           </Typography>
@@ -176,6 +183,7 @@ const ResponsiveAppBar = () => {
                     linkName={item.Name}
                     linkRef={item.href}
                     key={index}
+                    
                   />
           ))}
 

@@ -35,7 +35,6 @@ function createInfo() {
         newCattleHissue: "",
         newCattleReartype: "",
         newCattleReproStat: "",
-
     });
 
     const apiService = require("../components/APIcalls/APIService");

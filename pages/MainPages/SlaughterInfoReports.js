@@ -29,7 +29,7 @@ export default function DataTable() {
     }
     return (
         <div className="createInfo" style={{ marginTop: '30px' }}>
-            <Card style={{ maxWidth: 1050, height: "auto", padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
+            <Card style={{ maxWidth: 1480, height: "auto", padding: "20px 10px", margin: "0 auto", backgroundColor: "unset" }}>
                 <IconButton>
                     <ArrowBackIcon onClick={() => router.back()} />
                 </IconButton>
@@ -37,7 +37,7 @@ export default function DataTable() {
                     Slaughter Information Reports
                 </Typography>
                 <DataGrid
-                    style={{ maxWidth: 1050, height: 600, padding: "20px 5px", margin: "0 auto", border: "none", paddingTop: 0, paddingBottom: 0 }}
+                    style={{ maxWidth: 1480, height: 600, padding: "20px 5px", margin: "0 auto", border: "none", paddingTop: 0, paddingBottom: 0 }}
                     rows={rows}
                     columns={columns}
                     pageSize={10}

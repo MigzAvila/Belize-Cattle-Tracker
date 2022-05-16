@@ -44,7 +44,7 @@ function GeneratedQR() {
                             <QRCode
                                 id="qrCodeEl"
                                 size={150}
-                                value={"qrCodeText"}
+                                value={"Cattle ID: 36, Breed: Heredford, Antibiotic Type: penicillin, Weight: 400 lbs, DNA: Heredford, Eartag Code: 12233, Farmer: Bob Ross, Gender: Male, Location: Spanish Lookout, Rearing Type: Free Roaming, Reproduction Status: None, Underlying Health Issues: None, Factory Destination: San Ignacio, Factory Name: Running W, Slaughter Date: February 28, 2022, Slaughter Method: Stunning, Batch Number: 123, Cost Per Unit: 12.31, Package Date: March 1, 2022, Expiry Date: April 30, 2022, Factory Destination: Spanish Lookout, Factory Name: Running W, Meat Product Type: Ribs, Product Description: 10% lean, Product Weight: 12 lbs"}
                             />
                             <br />
                             <br></br>
